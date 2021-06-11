@@ -1,5 +1,5 @@
 
-Create a shortcut for python.exe
-Change the shortcut target into something like C:\xxx\...\python.exe your_script.py
-you need to move the script to the python source folder
-Click "advance..." in the property panel of the shortcut, and click the option "run as administrator"
+1. Create a shortcut for python.exe
+2. Change the shortcut target into something like C:\xxx\...\python.exe your_script.py
+3. You need to move the script to the python source folder
+4. In the shutcut, click "advance..." in the property panel of the shortcut, and click the option "run as administrator"
