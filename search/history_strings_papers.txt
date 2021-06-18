@@ -1,0 +1,9 @@
+illegal medication sales ,PUBMED,SCOPUS,SCHOLAR,2021-06-18 09:14:17.560129
+illegal drug (sales or market) ,PUBMED,SCOPUS,SCHOLAR,2021-06-18 09:22:12.251983
+illegal drug sales ,PUBMED,SCOPUS,SCHOLAR,2021-06-18 09:23:49.793724
+illegal drug (sales or market) and regulator ,PUBMED,SCOPUS,SCHOLAR,2021-06-18 10:16:54.056660
+illegal drug (sales or market) and regulator ,SCOPUS,2021-06-18 10:28:51.205853
+illegal drug (sales or market) and regulator ,SCOPUS,2021-06-18 10:38:53.399474
+illegal drug sales or market and regulator ,SCOPUS,2021-06-18 10:39:29.713354
+illegal drug sales and pharmacy and regulator ,SCOPUS,2021-06-18 10:42:27.390373
+illegal medications sales and pharmacy and regulator ,DBLP,PUBMED,SCOPUS,SCHOLAR,2021-06-18 11:04:14.743690

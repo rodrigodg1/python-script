@@ -5,8 +5,8 @@
 @author: rodrigodutra
 """
 import requests,sys,webbrowser,bs4
-import pandas as pd
-import numpy as np
+#import pandas as pd
+#import numpy as np
 import urllib
 from fake_useragent import UserAgent
 import requests
@@ -17,17 +17,18 @@ import datetime
 from tkinter import *
 import tkinter.messagebox
 
+path_to_save = '/Users/rodrigodutra/Desktop/python-script/search/history_strings_papers.txt'
+
+
 window = Tk()
 
-
-
-window.title("Welcome to Search Store Engine")
-window.geometry('550x100')
+window.title("Welcome to Search Engine")
+window.geometry('740x400')
 lbl_String = Label(window, text="String")
 
 
 lbl_String.grid(column=0, row=0)
-txt_String = Entry(window,width=50)
+txt_String = Entry(window,width=70)
 
 txt_String.grid(column=1, row=0)
 
@@ -57,6 +58,20 @@ chk.place(x=190,y=50)
 chk = Checkbutton(window, text='SCHOLAR', var=chk_state_scholar)
 chk.place(x=290,y=50)
 
+text = Text(window, height=20, width=100)
+text.place(x=10,y=100)
+scroll = Scrollbar(window, command=text.yview)
+scroll.pack(side=RIGHT)
+text.configure(yscrollcommand=scroll.set)
+
+
+
+def show_log():
+    text.delete("1.0","end")
+    arquivo = open(path_to_save,'r')
+    text.insert(INSERT, arquivo.read())  
+    arquivo
+
 
 
 def query_dblp(query):
@@ -75,9 +90,6 @@ def open_links(links):
         webbrowser.open(link)
 
 
-
-
-
 def convert_list_to_string(engines):
     engines_string = ""
     for engine in engines:
@@ -86,6 +98,7 @@ def convert_list_to_string(engines):
     return engines_string
 
 def clicked():
+    
     
     
     if(txt_String.get() == ''):
@@ -108,22 +121,22 @@ def clicked():
     
         date_ = datetime.datetime.now()
 
-        arquivo = open('history_strings_papers.txt','a')
+        arquivo = open(path_to_save,'a')
         arquivo.write(str(txt_String.get()) + " " + convert_list_to_string(engines_names) + ',' + str(date_) + "\n")
+        arquivo.close()
         
-        
+        show_log()
         
         
        
 
 
 btn = Button(window, text="Engine", command=clicked)
-btn.config( height = 2, width = 5 )
+btn.config( height = 2, width = 9 )
 btn.place(x=400,y=40)
 btn.config(fg='green')
 
-
-
+show_log()
 
 
 window.mainloop()
