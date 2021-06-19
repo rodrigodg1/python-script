@@ -15,7 +15,9 @@ from urllib.request import Request, urlopen
 from bs4 import BeautifulSoup
 import datetime
 from tkinter import *
+
 import tkinter.messagebox
+import tkinter.font as font
 
 path_to_save = '/Users/rodrigodutra/Desktop/python-script/search/history_strings_papers.txt'
 
@@ -24,16 +26,17 @@ window = Tk()
 
 window.title("Welcome to Search Engine")
 window.geometry('740x400')
-lbl_String = Label(window, text="String")
+lbl_String = Label(window, text="String",font='Helvetica 14 bold')
 
 
 lbl_String.grid(column=0, row=0)
-txt_String = Entry(window,width=70)
+txt_String = Entry(window,width=72)
 
 txt_String.grid(column=1, row=0)
+txt_String.place(x=60,y=10,height=40)
 
-txt_String.place(x=60,y=10)
-lbl_String.place(x=5,y=10)
+
+lbl_String.place(x=10,y=20)
 
 
 chk_state_dblp = BooleanVar()
@@ -50,20 +53,19 @@ chk_state_scholar = BooleanVar()
 chk_state_scholar.set(True) #set check state
 
 chk = Checkbutton(window, text='DBLP', var=chk_state_dblp)
-chk.place(x=30,y=50)
+chk.place(x=30,y=65)
 chk = Checkbutton(window, text='PUBMED', var=chk_state_pubmed)
-chk.place(x=100,y=50)
+chk.place(x=100,y=65)
 chk = Checkbutton(window, text='SCOPUS', var=chk_state_scopus)
-chk.place(x=190,y=50)
+chk.place(x=190,y=65)
 chk = Checkbutton(window, text='SCHOLAR', var=chk_state_scholar)
-chk.place(x=290,y=50)
+chk.place(x=290,y=65)
 
 text = Text(window, height=20, width=100)
-text.place(x=10,y=100)
+text.place(x=10,y=110)
 scroll = Scrollbar(window, command=text.yview)
 scroll.pack(side=RIGHT)
 text.configure(yscrollcommand=scroll.set)
-
 
 
 def show_log():
@@ -73,21 +75,15 @@ def show_log():
     arquivo
 
 
-
-def query_dblp(query):
-    query = urllib.parse.quote_plus(query) # Format into URL encoding
-    ua = UserAgent()
-    dblp_link = "https://dblp.org/search?q=" + query
-    response = requests.get(dblp_link, {"User-Agent": ua.random})
-    soup = BeautifulSoup(response.text, "html.parser")
-
-    return dblp_link
+def google_results(keyword):
+    query = keyword
+    google_url = "https://www.google.com/search?q=" + query
+    return google_url
 
 
 
-def open_links(links):
-    for link in links:
-        webbrowser.open(link)
+def open_link(link): 
+    webbrowser.open(link)
 
 
 def convert_list_to_string(engines):
@@ -97,8 +93,30 @@ def convert_list_to_string(engines):
     
     return engines_string
 
-def clicked():
+
+
+def google_clicked():
     
+    
+    if(txt_String.get() == ''):
+        tkinter.messagebox.showinfo(title=None, message="String is empty")
+    
+    else:
+        
+        link = google_results(str(txt_String.get()))
+        open_link(link)
+        
+        date_ = datetime.datetime.now()
+
+        arquivo = open(path_to_save,'a')
+        arquivo.write(str(txt_String.get()) + "," + "GOOGLE" + ',' + str(date_) + "\n")
+        arquivo.close()
+        
+        show_log()
+        
+        
+
+def engine_clicked():
     
     
     if(txt_String.get() == ''):
@@ -128,13 +146,21 @@ def clicked():
         show_log()
         
         
-       
+        
+myFont = font.Font(size=15)
 
+btn_engine = Button(window,text="Engine", command=engine_clicked)
+btn_engine.config( height = 2, width = 9 )
+btn_engine.place(x=400,y=56)
+btn_engine.config(fg='black')
+btn_engine['font'] = myFont
 
-btn = Button(window, text="Engine", command=clicked)
-btn.config( height = 2, width = 9 )
-btn.place(x=400,y=40)
-btn.config(fg='green')
+btn_google = Button(window, text="Google", command=google_clicked)
+btn_google.config( height = 2, width = 9 )
+btn_google.place(x=530,y=56)
+btn_google.config(fg='blue')
+btn_google['font'] = myFont
+
 
 show_log()
 

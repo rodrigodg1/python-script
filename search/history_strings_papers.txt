@@ -7,3 +7,11 @@ illegal drug (sales or market) and regulator ,SCOPUS,2021-06-18 10:38:53.399474
 illegal drug sales or market and regulator ,SCOPUS,2021-06-18 10:39:29.713354
 illegal drug sales and pharmacy and regulator ,SCOPUS,2021-06-18 10:42:27.390373
 illegal medications sales and pharmacy and regulator ,DBLP,PUBMED,SCOPUS,SCHOLAR,2021-06-18 11:04:14.743690
+medications sales and pharmacy and regulator ,DBLP,PUBMED,SCOPUS,SCHOLAR,2021-06-19 08:59:12.436467
+invalid prescriptions and medications ,DBLP,PUBMED,SCOPUS,SCHOLAR,2021-06-19 09:04:13.831175
+invalid prescription* and sales medication ,DBLP,PUBMED,SCOPUS,SCHOLAR,2021-06-19 09:06:12.523434
+invalid prescription and sales medication ,DBLP,PUBMED,SCOPUS,SCHOLAR,2021-06-19 09:07:45.288871
+illegal drug sales and invalid prescription ,DBLP,PUBMED,SCOPUS,SCHOLAR,2021-06-19 09:09:29.739655
+illegal drug sales pharmacy ,DBLP,PUBMED,SCOPUS,SCHOLAR,2021-06-19 09:25:09.218842
+illicit drug sales and pharmacy ,PUBMED,SCOPUS,SCHOLAR,2021-06-19 09:38:57.901005
+
