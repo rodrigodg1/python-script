@@ -14,7 +14,9 @@ invalid prescription and sales medication ,DBLP,PUBMED,SCOPUS,SCHOLAR,2021-06-19
 illegal drug sales and invalid prescription ,DBLP,PUBMED,SCOPUS,SCHOLAR,2021-06-19 09:09:29.739655
 illegal drug sales pharmacy ,DBLP,PUBMED,SCOPUS,SCHOLAR,2021-06-19 09:25:09.218842
 illicit drug sales and pharmacy ,PUBMED,SCOPUS,SCHOLAR,2021-06-19 09:38:57.901005
+illicit drug sales and pharmacy ,DBLP,PUBMED,SCOPUS,SCHOLAR,2021-06-19 14:30:49.25578
 
-illicit drug sales and pharmacy ,DBLP,PUBMED,SCOPUS,SCHOLAR,2021-06-19 14:30:49.255785
+reward for reporting ,SCOPUS,SCHOLAR,2021-06-19 23:10:56.290367
 
-lazaro,GOOGLE,2021-06-19 16:02:00.227197
+
+cbms ,DBLP,2021-06-19 23:37:26.771347

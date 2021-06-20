@@ -31,7 +31,7 @@ path_to_save = '/Users/rodrigodutra/Desktop/python-script/search/history_strings
 window = Tk()
 window.resizable(False, False)
 window.title("Search Engine v1.0")
-window.geometry('810x400')
+window.geometry('810x415')
 lbl_String = Label(window, text="String",font='Helvetica 14 bold')
 
 #String Label
@@ -100,22 +100,31 @@ def convert_list_to_string(engines):
     return engines_string
 
 
-#if google button
-def drive_upload():
+def save_changes():
+    arquivo = open(path_to_save,'w')
+    arquivo.write(text.get("1.0",END))
     
-   
+    text.delete("1.0","end")
+    arquivo = open(path_to_save,'r')
+    text.insert(INSERT, arquivo.read())  
+
+#if drive upload button
+def save_and_drive_upload():
+    
+    save_changes()
+    
     gauth = GoogleAuth()           
-    drive = GoogleDrive(gauth)  
+    drive = GoogleDrive(gauth)   
     upload_file_list = [path_to_save]
-    
     for upload_file in upload_file_list:
     	gfile = drive.CreateFile({'parents': [{'id': '1Kqbg1KNfA8s3UxHIoqZ2uH8tQP_aVd3z'}]})
     	# Read file and set it as the content of this instance.
     	gfile.SetContentFile(upload_file)
     	gfile.Upload() # Upload the file.
-
-
-
+        
+        
+    alert_msg("Success Uploaded")
+    
 
 
 #if google button
@@ -135,14 +144,20 @@ def google_clicked():
         arquivo.write(str(txt_String.get()) + "," + "GOOGLE" + ',' + str(date_) + "\n")
         arquivo.close()
         
+        
         show_log()
         
+      
+def alert_msg(msg):
+    tkinter.messagebox.showinfo(title=None, message=msg)
+           
+      
         
 #if engine button
 def engine_clicked():
     
     if(txt_String.get() == ''):
-        tkinter.messagebox.showinfo(title=None, message="String is empty")
+        alert_msg("String is empty")
     
     else:
         engines_names = []
@@ -188,11 +203,19 @@ btn_google.config(fg='blue')
 btn_google['font'] = myFont
 
 
-btn_drive = Button(window, text="Upload", command=drive_upload)
+btn_drive = Button(window, text="Up. To Drive", command=save_and_drive_upload)
 btn_drive.config( height = 2, width = 9 )
 btn_drive.place(x=660,y=56)
-btn_drive.config(fg='red')
+btn_drive.config(fg='black')
 btn_drive['font'] = myFont
+
+btn_drive = Button(window, text="Save Changes", command=save_changes)
+btn_drive.config( height = 1, width = 9 )
+btn_drive.place(x=660,y=380)
+btn_drive.config(fg='Black')
+btn_drive['font'] = myFont
+
+
 
 
 show_log()
