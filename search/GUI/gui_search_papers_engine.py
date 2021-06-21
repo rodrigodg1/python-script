@@ -25,7 +25,7 @@ from pydrive.drive import GoogleDrive
 
 
 
-path_to_save = '/Users/rodrigodutra/Desktop/python-script/search/history_strings_papers.txt'
+path_to_save = '/Users/rodrigodutra/Desktop/python-script/search/GUI/history_strings_papers.txt'
 
 #create gui elements
 window = Tk()
