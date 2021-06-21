@@ -12,7 +12,7 @@ from tkinter import scrolledtext
 
 window = tk.Tk()
 window.resizable(False, False)
-window.title("Text Editor Engine")
+window.title("Text Editor Engine v1.0 (Auto Saving)")
 #window.rowconfigure(0, minsize=740, weight=1)
 #window.columnconfigure(1, minsize=740, weight=1)
 window.geometry('970x650')
@@ -23,6 +23,10 @@ scrolH=32
 txt_edit=scrolledtext.ScrolledText(window,width=scrolW, height=scrolH, wrap=tk.WORD,font='Consolas 16')  
 
 
+#autosaving
+path_file_save_this = "/Users/rodrigodutra/Desktop/python-script/search/blank_file.txt"
+
+
 
 def alert_msg(msg):
     tkinter.messagebox.showinfo(title=None, message=msg)
@@ -30,8 +34,6 @@ def alert_msg(msg):
 
 #if drive upload button
 def drive_upload():
-    
-    
     
     path_to_save = open_file()
     
@@ -51,10 +53,20 @@ def drive_upload():
         
         
     except:
-        
         alert_msg("Fail !")
 
 
+def save_changes():
+    try:
+        with open(path_file_save_this, "w") as output_file:
+            text = txt_edit.get(1.0, tk.END)
+            output_file.write(text)
+            
+        
+    except:
+        alert_msg("Fail to save :(\nOpen the file again or Create a File First")
+    
+    
 
 
 def open_file():
@@ -62,6 +74,11 @@ def open_file():
     filepath = askopenfilename(
         filetypes=[("Text Files", "*.txt"), ("All Files", "*.*")]
     )
+    #for save this feature
+    global path_file_save_this 
+    path_file_save_this = filepath
+    
+
     if not filepath:
         return
     txt_edit.delete(1.0, tk.END)
@@ -78,6 +95,12 @@ def save_file():
         defaultextension="txt",
         filetypes=[("Text Files", "*.txt"), ("All Files", "*.*")],
     )
+    
+    #for save this feature, store path of file
+    global path_file_save_this 
+    path_file_save_this = filepath
+    
+    
     if not filepath:
         return
     with open(filepath, "w") as output_file:
@@ -87,10 +110,19 @@ def save_file():
     alert_msg("Success !")
     
     
+    
 def new_file():
     txt_edit.delete("1.0","end") 
     save_file()
     
+
+def autosave():
+    save_changes()
+    time_in_s = 50
+    time_to_auto_save_in_ms = time_in_s * 1000
+    window.after(time_to_auto_save_in_ms, autosave) # time in milliseconds   
+    print("saved")
+            
     
     
 
@@ -103,8 +135,8 @@ btn_upload = tk.Button(fr_buttons, text="Up. to Drive", command=drive_upload)
 
 btn_new.grid(row=0, column=0, sticky="ew", padx=5, pady=2)
 btn_open.grid(row=1, column=0, sticky="ew", padx=5, pady=2)
-btn_save.grid(row=2, column=0, sticky="ew", padx=5,pady=2)
-btn_upload.grid(row=3, column=0, sticky="ew", padx=5,pady=2)
+btn_save.grid(row=3, column=0, sticky="ew", padx=5,pady=2)
+btn_upload.grid(row=4, column=0, sticky="ew", padx=5,pady=2)
 
 btn_new.config( height = 2, width = 9 )
 btn_open.config( height = 2, width = 9 )
@@ -115,6 +147,5 @@ fr_buttons.grid(row=0, column=0, sticky="ns")
 txt_edit.grid(row=0, column=1, sticky="nsew")
 
 
-
-
+autosave() 
 window.mainloop()
