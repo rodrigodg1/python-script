@@ -7,7 +7,7 @@ from pydrive.drive import GoogleDrive
 import tkinter.messagebox
 from tkinter import *
 from tkinter import scrolledtext  
-
+import os
 
 
 window = tk.Tk()
@@ -20,7 +20,15 @@ window.geometry('970x650')
 
 scrolW=73 
 scrolH=32
+
+#text area 
 txt_edit=scrolledtext.ScrolledText(window,width=scrolW, height=scrolH, wrap=tk.WORD,font='Consolas 16')  
+
+#String Label
+
+display_text = tk.StringVar()
+lbl_String = Label(window,textvariable=display_text, text="....",font='Helvetica 12 bold')
+lbl_String.grid(row=5, column=0, sticky="ew", padx=5,pady=2)
 
 
 #autosaving
@@ -56,6 +64,7 @@ def drive_upload():
         alert_msg("Fail !")
 
 
+#save text
 def save_changes():
     try:
         with open(path_file_save_this, "w") as output_file:
@@ -116,12 +125,28 @@ def new_file():
     save_file()
     
 
+atual =0
+antigo =0
+
 def autosave():
-    save_changes()
-    time_in_s = 50
+    display_text.set(" ")
+    global atual
+    global antigo
+    
+    atual = len(txt_edit.get(1.0, tk.END))
+
+    
+    if(atual != antigo):
+        save_changes()
+        print("saved")
+        display_text.set("Saving")
+        antigo = atual
+        
+    time_in_s = 1
     time_to_auto_save_in_ms = time_in_s * 1000
+    
     window.after(time_to_auto_save_in_ms, autosave) # time in milliseconds   
-    print("saved")
+    
             
     
     
@@ -143,8 +168,18 @@ btn_open.config( height = 2, width = 9 )
 btn_save.config( height = 2, width = 9 )
 btn_upload.config( height = 2, width = 9 )
 
+
+
+
+
 fr_buttons.grid(row=0, column=0, sticky="ns")
 txt_edit.grid(row=0, column=1, sticky="nsew")
+
+
+
+
+
+
 
 
 autosave() 
