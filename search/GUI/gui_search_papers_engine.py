@@ -8,6 +8,9 @@ import requests,sys,webbrowser
 #import pandas as pd
 #import numpy as np
 import urllib
+from tkinter.filedialog import askopenfilename, asksaveasfilename
+
+import tkinter as tk
 #from fake_useragent import UserAgent
 import requests
 import re
@@ -15,69 +18,139 @@ from urllib.request import Request, urlopen
 #from bs4 import BeautifulSoup
 import datetime
 from tkinter import *
-
+from tkinter import scrolledtext  
 import tkinter.messagebox
 import tkinter.font as font
-
+import time
 from pydrive.auth import GoogleAuth
 from pydrive.drive import GoogleDrive
 
+import os
 
 
-
-path_to_save = '/Users/rodrigodutra/Desktop/python-script/search/GUI/history_strings_papers.txt'
+#path_to_save = '/Users/rodrigodutra/Desktop/python-script/search/GUI/history_strings_papers.txt'
 
 #create gui elements
 window = Tk()
 window.resizable(False, False)
 window.title("Search Engine v1.0")
-window.geometry('810x415')
+window.geometry('980x680')
 lbl_String = Label(window, text="String",font='Helvetica 14 bold')
-
-#String Label
 lbl_String.grid(column=0, row=0)
-txt_String = Entry(window,width=80)
+lbl_String.place(x=10,y=20)
 
+txt_String = Entry(window,width=98)
 txt_String.grid(column=1, row=0)
 txt_String.place(x=60,y=10,height=40)
 
 
-lbl_String.place(x=10,y=20)
+
+
+
+
+
 
 #Checkbox
 chk_state_dblp = BooleanVar()
-chk_state_dblp.set(True) #set check state
+chk_state_dblp.set(False) #set check state
 
 chk_state_pubmed = BooleanVar()
-chk_state_pubmed.set(True) #set check state
+chk_state_pubmed.set(False) #set check state
 
 chk_state_scopus = BooleanVar()
-chk_state_scopus.set(True) #set check state
+chk_state_scopus.set(False) #set check state
 
 chk_state_scholar = BooleanVar()
-chk_state_scholar.set(True) #set check state
+chk_state_scholar.set(False) #set check state
+
+
+chk_state_zlibgen = BooleanVar()
+chk_state_zlibgen.set(False) #set check state
+
 
 chk = Checkbutton(window, text='DBLP', var=chk_state_dblp)
-chk.place(x=30,y=65)
+chk.place(x=30,y=67)
 chk = Checkbutton(window, text='PUBMED', var=chk_state_pubmed)
-chk.place(x=100,y=65)
+chk.place(x=100,y=67)
 chk = Checkbutton(window, text='SCOPUS', var=chk_state_scopus)
-chk.place(x=190,y=65)
+chk.place(x=190,y=67)
 chk = Checkbutton(window, text='SCHOLAR', var=chk_state_scholar)
-chk.place(x=290,y=65)
+chk.place(x=280,y=67)
+chk = Checkbutton(window, text='ZLIBGEN', var=chk_state_zlibgen)
+chk.place(x=380,y=67)
 
-text = Text(window, height=20, width=110)
-text.place(x=10,y=110)
-scroll = Scrollbar(window, command=text.yview)
-scroll.pack(side=RIGHT)
-text.configure(yscrollcommand=scroll.set)
+
+
+
+def track_change_to_text_to_dark(event):
+    txt_edit.tag_add("here","1.0","end")
+    txt_edit.tag_config("here", background="black", foreground="white",selectbackground="blue",selectforeground="yellow")
+
+def track_change_to_text_to_light(event):
+    txt_edit.tag_add("here","1.0","end")
+    txt_edit.tag_config("here", background="white", foreground="black",selectbackground="cyan",selectforeground="yellow")
+
+def track_change_to_text_to_blue(event):
+    txt_edit.tag_add("here","1.0","end")
+    txt_edit.tag_config("here", background="blue", foreground="white",selectbackground="black",selectforeground="yellow")
+
+
+
+
+
+txt_edit=scrolledtext.ScrolledText(window,width=85, height=25, wrap=tk.WORD,font='Consolas 16')  
+txt_edit.bind('<F1>', track_change_to_text_to_dark)
+txt_edit.bind('<F2>', track_change_to_text_to_light)
+txt_edit.bind('<F3>', track_change_to_text_to_blue)
+
+
+txt_edit.place(x=10,y=135)
+
+
+
+
+
+display_text = tk.StringVar()
+lbl_String_Saving = Label(window,textvariable=display_text, text="...",font='Helvetica 14')
+lbl_String_Saving.place(x=820,y=635)
+
+
+display_text_file_size = tk.StringVar()
+lbl_String_file_size = Label(window,textvariable=display_text_file_size, text="...",font='Helvetica 14')
+lbl_String_file_size.place(x=18,y=105)
+
+
+
+
+
+
+#autosaving
+path_file_save_this = "/Users/rodrigodutra/Desktop/python-script/search/GUI/blank_file.txt"
+
+
+def clear_file(name):
+    file_to_remove_path = f"/Users/rodrigodutra/Desktop/python-script/search/GUI/{name}.txt"
+    arquivo = open(file_to_remove_path,'w')
+    arquivo.write("")
+    arquivo.close()
+
+
+
+
+
+
+def get_file_size(path):
+    try:
+        return os.path.getsize(path) 
+    except:
+        alert_msg("Fail to read file")
 
 
 #clear screen log
 def show_log():
-    text.delete("1.0","end")
-    arquivo = open(path_to_save,'r')
-    text.insert(INSERT, arquivo.read())  
+    txt_edit.delete("1.0","end")
+    arquivo = open(path_file_save_this,'r')
+    txt_edit.insert(INSERT, arquivo.read())  
     
 
 #return google link for search
@@ -100,31 +173,55 @@ def convert_list_to_string(engines):
     return engines_string
 
 
+#save text (for auto saving)
 def save_changes():
-    arquivo = open(path_to_save,'w')
-    arquivo.write(text.get("1.0",END))
+
+    try:
+        with open(path_file_save_this, "w") as output_file:
+            text = txt_edit.get(1.0, tk.END)
+            output_file.write(text)
+            
+            return True
+            
+        
+    except:
+        alert_msg("Fail to save")
+
+
     
-    text.delete("1.0","end")
-    arquivo = open(path_to_save,'r')
-    text.insert(INSERT, arquivo.read())  
+    
+
 
 #if drive upload button
-def save_and_drive_upload():
+def drive_upload():
     
-    save_changes()
+    path_to_save = open_file()
     
-    gauth = GoogleAuth()           
-    drive = GoogleDrive(gauth)   
-    upload_file_list = [path_to_save]
-    for upload_file in upload_file_list:
-    	gfile = drive.CreateFile({'parents': [{'id': '1Kqbg1KNfA8s3UxHIoqZ2uH8tQP_aVd3z'}]})
-    	# Read file and set it as the content of this instance.
-    	gfile.SetContentFile(upload_file)
-    	gfile.Upload() # Upload the file.
+    try:
+        gauth = GoogleAuth()           
+        drive = GoogleDrive(gauth)   
+        upload_file_list = [path_to_save]
+        
+        for upload_file in upload_file_list:
+            
+        	gfile = drive.CreateFile({'parents': [{'id': '1XoutccDFglVRay4Nfvc-qDjBHDm3VIHi'}]})
+        	# Read file and set it as the content of this instance.
+        	gfile.SetContentFile(upload_file)
+        	gfile.Upload() # Upload the file.
+            
+        alert_msg("Success !")    
         
         
-    alert_msg("Success Uploaded")
-    
+    except:
+        alert_msg("Fail !")
+
+
+def get_date_and_hour():
+    date_ = datetime.datetime.now()
+    hour_ = f"{date_.hour}:{date_.minute}:{date_.second}"
+    date_ = str(date_.strftime("%d/%m/%Y"))
+
+    return date_,hour_
 
 
 #if google button
@@ -138,20 +235,17 @@ def google_clicked():
         link = google_results(str(txt_String.get()))
         open_link(link)
         
-        date_ = datetime.datetime.now()
+        
+        date_,hour_ = get_date_and_hour()
 
-        arquivo = open(path_to_save,'a')
-        arquivo.write(str(txt_String.get()) + "," + "GOOGLE" + ',' + str(date_) + "\n")
+
+        print(path_file_save_this)
+        arquivo = open(path_file_save_this,'a')
+        arquivo.write(str(txt_String.get()) + " , " + "GOOGLE" + ' , ' + date_ + " , "+ hour_ +'\n')
         arquivo.close()
         
         
         show_log()
-        
-      
-def alert_msg(msg):
-    tkinter.messagebox.showinfo(title=None, message=msg)
-           
-      
         
 #if engine button
 def engine_clicked():
@@ -173,52 +267,161 @@ def engine_clicked():
             webbrowser.open("https://www.scopus.com/results/results.uri?src=s&sot=b&sdt=b&origin=searchbasic&rr=&sl=15&s=ALL("+str(txt_String.get())+")&searchterm1="+str(txt_String.get())+"&searchTerms=&connectors=&field1=ALL&fields=")
         if(chk_state_scholar.get()):
             engines_names.append("SCHOLAR")
-            webbrowser.open("https://scholar.google.com/scholar?hl=pt-BR&as_sdt=0%2C5&q="+str(txt_String.get())+"&btnG=")    
+            webbrowser.open("https://scholar.google.com/scholar?hl=pt-BR&as_sdt=0%2C5&q="+str(txt_String.get())+"&btnG=") 
+        if(chk_state_zlibgen.get()):
+            engines_names.append("ZLIBGEN")
+            webbrowser.open("https://br1lib.org/s/"+str(txt_String.get()))   
     
-        date_ = datetime.datetime.now()
+        date_,hour_ = get_date_and_hour()
 
-        arquivo = open(path_to_save,'a')
-        arquivo.write(str(txt_String.get()) + " " + convert_list_to_string(engines_names) + ',' + str(date_) + "\n")
+        arquivo = open(path_file_save_this,'a')
+        arquivo.write(str(txt_String.get()) + " " + convert_list_to_string(engines_names) + ' , ' + date_ + " , "+ hour_ +'\n')
         arquivo.close()
         
         
         show_log()
+                
         
         
+      
+def alert_msg(msg):
+    tkinter.messagebox.showinfo(title=None, message=msg)
+           
+   
+    
+def open_file():
+    """Open a file for editing."""
+    filepath = askopenfilename(
+        filetypes=[("Text Files", "*.txt"), ("All Files", "*.*")]
+    )
+    #for save this feature
+    global path_file_save_this 
+    path_file_save_this = filepath
+    
+
+    if not filepath:
+        return
+    txt_edit.delete(1.0, tk.END)
+    with open(filepath, "r") as input_file:
+        text = input_file.read()
+        txt_edit.insert(tk.END, text)
+    window.title(f"Text Editor Engine - {filepath}")
+    
+    
+    return filepath
+
+def save_file():
+    """Save the current file as a new file."""
+    filepath = asksaveasfilename(
+        defaultextension="txt",
+        filetypes=[("Text Files", "*.txt"), ("All Files", "*.*")],
+    )
+    
+    #for save this feature, store path of file
+    global path_file_save_this 
+    path_file_save_this = filepath
+    
+    
+    if not filepath:
+        return
+    with open(filepath, "w") as output_file:
+        text = txt_edit.get(1.0, tk.END)
+        output_file.write(text)
+    window.title(f"Text Editor Engine - {filepath}")
+    alert_msg("Success !")
+    
+    
+    
+def new_file():
+    txt_edit.delete("1.0","end") 
+    save_file()
+            
+   
+count_char =0
+old_count_char =0
+
+def autosave():
+    #print(path_file_save_this)
+    display_text.set(" ")
+    global count_char
+    global old_count_char
+    
+   
+    count_char = sum(len(x) for x in txt_edit.get(1.0, tk.END).split())
+    #count_char  = len(txt_edit.get(1.0, tk.END))
+    
+    
+    if(count_char != old_count_char):
+        save_changes()
+        display_text.set("Saving")
+        #print("saved")
+        old_count_char = count_char
+    
+
+    file_size_updated = f"{get_file_size(path_file_save_this)} bytes | {count_char} chars"
+    display_text_file_size.set(file_size_updated)    
         
+    time_in_s = 5
+    time_to_auto_save_in_ms = time_in_s * 1000
+    
+    window.after(time_to_auto_save_in_ms, autosave) # time in milliseconds   
+    
+      
+
+
 
 myFont = font.Font(size=15)
 
 #btn elements
 btn_engine = Button(window,text="Engine", command=engine_clicked)
 btn_engine.config( height = 2, width = 9 )
-btn_engine.place(x=400,y=56)
+btn_engine.place(x=500,y=58)
 btn_engine.config(fg='black')
 btn_engine['font'] = myFont
 
 btn_google = Button(window, text="Google", command=google_clicked)
 btn_google.config( height = 2, width = 9 )
-btn_google.place(x=530,y=56)
+btn_google.place(x=630,y=58)
 btn_google.config(fg='blue')
 btn_google['font'] = myFont
 
 
-btn_drive = Button(window, text="Up. To Drive", command=save_and_drive_upload)
+btn_drive = Button(window, text="Up. To Drive", command=drive_upload)
 btn_drive.config( height = 2, width = 9 )
-btn_drive.place(x=660,y=56)
+btn_drive.place(x=760,y=58)
 btn_drive.config(fg='black')
 btn_drive['font'] = myFont
 
-btn_drive = Button(window, text="Save Changes", command=save_changes)
-btn_drive.config( height = 1, width = 9 )
-btn_drive.place(x=660,y=380)
-btn_drive.config(fg='Black')
-btn_drive['font'] = myFont
+#btn_save = Button(window, text="Save Changes", command=save_changes)
+#btn_save.config( height = 1, width = 9 )
+#btn_save.place(x=660,y=380)
+#btn_save.config(fg='Black')
+#btn_save['font'] = myFont
 
 
 
+btn_new = Button(window, text="New", command=new_file)
+btn_new.config( height = 2, width = 9 )
+btn_new.place(x=15,y=620)
+btn_new.config(fg='Black')
+btn_new['font'] = myFont
 
-show_log()
+btn_open = Button(window, text="Open", command=open_file)
+btn_open.config( height = 2, width = 9 )
+btn_open.place(x=140,y=620)
+btn_open.config(fg='Black')
+btn_open['font'] = myFont
+
+btn_save_as = Button(window, text="Save as...", command=save_file)
+btn_save_as.config( height = 2, width = 9 )
+btn_save_as.place(x=265,y=620)
+btn_save_as.config(fg='Black')
+btn_save_as['font'] = myFont
 
 
+
+#show_log()
+clear_file("blank_file")
+
+autosave() 
 window.mainloop()
