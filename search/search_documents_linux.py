@@ -21,7 +21,7 @@ def count_files_in_directory(path):
 
 
 
-print("\nOpen a path origin and search files withends .pdf .docx .doc .txt \n")
+print("\nOpen a origin path and search files and copy to destination folder\n")
 
 print("1 - Run script\n2 - Clear results\n3 - Rename all PDF files")
 op = input("> ")
@@ -38,21 +38,28 @@ if(op == '1'):
    #     path = os.path.join(parent_dir, directory)
    #     os.mkdir(path) 
     
-
+    count = 0
     #search the files in origin path and copy to path_to_save
     for r, d, f in os.walk(path_origin):
         for each_file in f:
-            if each_file.endswith(".pdf") or each_file.endswith(".doc") or each_file.endswith(".txt") or each_file.endswith(".docx") :
+            #if each_file.endswith(".pdf") or each_file.endswith(".doc") or each_file.endswith(".txt") or each_file.endswith(".docx") :
+                    #get file extension to rename
+                    extension = os.path.splitext(each_file)[1]
                     #copy imgs to another folder
-                    newPath = shutil.copy(os.path.join(r, each_file), path_to_save) 
+                    newPath = shutil.copy(os.path.join(r, each_file), f"{path_to_save}{count}{extension}") 
                     #store the path in file
                     #f = open(f"{path_to_save}/logs/results.txt", "a")
                     #f.write(os.path.join(r, each_file))
                     #f.write("\n")
+                    
+                    count = count + 1
+                    
     #f.close() 
+
+    print("Found Files In ORIGIN Directory: ", count)
     
     
-    print("Total Files in end directory: " + str(count_files_in_directory(path_to_save)))
+    print("Total Files in END directory: " + str(count_files_in_directory(path_to_save)))
 
                
                     
