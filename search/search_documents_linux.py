@@ -8,10 +8,10 @@ import shutil
 
 #path to begning the search, its recursively
 #path_origin='/'
-path_origin = '/Users/rodrigodutra/Downloads/atividade3/'
+path_origin = '/Users/rodrigodutra/Downloads/arquivos-origem/'
 
 #path to save the results
-path_to_save = '/Users/rodrigodutra/Desktop/pdfs-atividade3/'
+path_to_save = '/Users/rodrigodutra/Desktop/arquivos-destino/'
 
 
 
@@ -23,20 +23,20 @@ def count_files_in_directory(path):
 
 print("\nOpen a path origin and search files withends .pdf .docx .doc .txt \n")
 
-print("1 - Run script\n2 - Clear results")
+print("1 - Run script\n2 - Clear results\n3 - Rename all PDF files")
 op = input("> ")
 
 if(op == '1'):
     
-    #verify is logs directory exists
-    try:
-         f = open(f"{path_to_save}/logs/results.txt", "a")
+    #verify if logs directory exists
+    #try:
+    #     f = open(f"{path_to_save}/logs/results.txt", "a")
     
-    except:
-        parent_dir = path_to_save
-        directory = 'logs'
-        path = os.path.join(parent_dir, directory)
-        os.mkdir(path) 
+   # except:
+   #    parent_dir = path_to_save
+   #     directory = 'logs'
+   #     path = os.path.join(parent_dir, directory)
+   #     os.mkdir(path) 
     
 
     #search the files in origin path and copy to path_to_save
@@ -46,10 +46,10 @@ if(op == '1'):
                     #copy imgs to another folder
                     newPath = shutil.copy(os.path.join(r, each_file), path_to_save) 
                     #store the path in file
-                    f = open(f"{path_to_save}/logs/results.txt", "a")
-                    f.write(os.path.join(r, each_file))
-                    f.write("\n")
-    f.close() 
+                    #f = open(f"{path_to_save}/logs/results.txt", "a")
+                    #f.write(os.path.join(r, each_file))
+                    #f.write("\n")
+    #f.close() 
     
     
     print("Total Files in end directory: " + str(count_files_in_directory(path_to_save)))
@@ -69,4 +69,18 @@ elif(op == '2'):
         except Exception as e:
             print('Failed to delete %s. Reason: %s' % (file_path, e))    
     
-    print("Folder is clear !")
+    print("Ok ! Folder is clear !")
+
+
+elif(op == '3'):
+    path = path_to_save
+    files = os.listdir(path)
+
+    for index, file in enumerate(files):
+        if(os.path.join(path, file) != "logs"):
+            os.rename(os.path.join(path, file), os.path.join(path, ''.join([str(index), '.pdf'])))  
+        
+    print("Ok ! Files enumered")
+
+
+
