@@ -264,7 +264,8 @@ def engine_clicked():
         if(chk_state_scopus.get()):
             engines_names.append("SCOPUS")
             #webbrowser.open("https://www.scopus.com/results/results.uri?src=s&sot=b&sdt=b&origin=searchbasic&rr=&sl=40&s=TITLE-ABS-KEY("+str(txt_String.get())+")&searchterm1=blockchain%20and%20healthcare&searchTerms=&connectors=&field1=TITLE_ABS_KEY&fields=")
-            webbrowser.open("https://www.scopus.com/results/results.uri?src=s&sot=b&sdt=b&origin=searchbasic&rr=&sl=15&s=ALL("+str(txt_String.get())+")&searchterm1="+str(txt_String.get())+"&searchTerms=&connectors=&field1=ALL&fields=")
+            #webbrowser.open("https://www.scopus.com/results/results.uri?src=s&sot=b&sdt=b&origin=searchbasic&rr=&sl=15&s=TITLE-ABS-KEY("+str(txt_String.get())+")&searchterm1="+str(txt_String.get())+"&searchTerms=&connectors=&field1=ALL&fields=")
+            webbrowser.open("https://www.scopus.com/results/results.uri?sid=7a0754416e07eadad037a624472287b7&src=s&sot=b&sdt=b&origin=searchbasic&rr=&sl=25&s=TITLE-ABS-KEY("+str(txt_String.get())+")&searchterm1="+str(txt_String.get())+"&searchTerms=&connectors=&field1=TITLE_ABS_KEY&fields=")      
         if(chk_state_scholar.get()):
             engines_names.append("SCHOLAR")
             webbrowser.open("https://scholar.google.com/scholar?hl=pt-BR&as_sdt=0%2C5&q="+str(txt_String.get())+"&btnG=") 
