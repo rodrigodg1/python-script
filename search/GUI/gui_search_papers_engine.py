@@ -28,6 +28,8 @@ from pydrive.drive import GoogleDrive
 import os
 
 
+path_gui_directory = '/Users/rodrigodutra/Desktop/python-script/search/GUI'
+
 #path_to_save = '/Users/rodrigodutra/Desktop/python-script/search/GUI/history_strings_papers.txt'
 
 #create gui elements
@@ -125,11 +127,11 @@ lbl_String_file_size.place(x=18,y=105)
 
 
 #autosaving
-path_file_save_this = "C:/Users/rodri/OneDrive/Desktop/python-script/search/GUI/blank_file.txt"
+path_file_save_this = f"{path_gui_directory}/blank_file.txt"
 
 
 def clear_file(name):
-    file_to_remove_path = f"/Users/rodri/OneDrive/Desktop/python-script/search/GUI/{name}.txt"
+    file_to_remove_path = f"{path_gui_directory}/{name}.txt"
     arquivo = open(file_to_remove_path,'w')
     arquivo.write("")
     arquivo.close()

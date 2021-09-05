@@ -9,6 +9,10 @@ import timeit
 import numpy as np
 import os
 import pandas as pd
+from matplotlib import cm
+import random
+
+
 
 
 
@@ -70,51 +74,90 @@ text=''' '''
 tic = timeit.default_timer()
 count_pdf = count_pdf_files()
 freq_word =[]
+op = input("Apply filtering in words? y/n: ")
 for i in range(0, count_pdf):
     import matplotlib as plt
 
-
+    print(f"\nfilters will be applied on file {i+1}")
     print(f"\nAnalysing file {i+1}/{count_pdf}")
     text = get_text_from_pdf(f"file{i}.pdf")
     
     
-    words_to_remove = ['arxiv','fig','tab','article','paper'
-                 ,'still','downloaded','licensed',
-                 "de",'what','who','is','a','at',
-                 'is','he','used','ieee','org','doi',
-                 'universidade','sao','paulo','dx',
-                 'https','elsevier','author','etc',
-                 'many','more','will','et','al','year',
-                 'url','refhub','en','xrecord','limited','xplore',
-                 'use',' paulo','utc','september','de sao', 'ieee explore',
-                 'licensed use', 'paulo downloaded', 'restrictions apply',
-                 'sao paulo','universidade de', 'use limited','Xplore Restrictions']
+    if(op == 'y'):
+        
+        words_to_remove_en = ['arxiv','fig','tab','article','paper'
+                     ,'still','downloaded','licensed',
+                     "de",'what','who','is','a','at',
+                     'is','he','used','ieee','org','doi',
+                     'universidade','sao','paulo','dx',
+                     'https','elsevier','author','etc',
+                     'many','more','will','et','al','year',
+                     'url','refhub','en','xrecord','limited','xplore',
+                     'use',' paulo','utc','september','de sao', 'ieee explore',
+                     'licensed use', 'paulo downloaded', 'restrictions apply',
+                     'sao paulo','universidade de',
+                     'use limited','Xplore Restrictions',
+                     "a","b","c","d","e","f","g","i","j","k","l","m","n",
+                     "o","p","q","r","s","t","v","u","x","z","w","y"]
+        
+        words_to_remove_pt = ["quais","vem","vêm","tanto","quanto"
+                              ,"os","pelo","para","e","o","que",
+                              "da","em","se","por","portanto","enquanto",
+                              "enquanto","entretanto","logo",
+                              "e","ou","entre",
+                              "a","b","c","d","e","f","g","i","j","k","l","m","n",
+                              "o","p","q","r","s","v","u","x","z","w","y"]
     
-
-    querywords = text.split()
-
-    resultwords  = [word for word in querywords if word.lower() not in words_to_remove]
-    filtered_sentence = ' '.join(resultwords)
-    text = filtered_sentence
-
+        querywords = text.split()
+        
+        resultwords  = [word for word in querywords if word.lower() not in words_to_remove_en]
+        filtered_sentence = ' '.join(resultwords)
+        text = filtered_sentence
+        
+        querywords = text.split()
+        resultwords  = [word for word in querywords if word.lower() not in words_to_remove_pt]
+        filtered_sentence = ' '.join(resultwords)
+        text = filtered_sentence
+        
+    else:
+         print(f"\nfilters not will be applied on file{i}")
+        
+        
+        
     
     wordcloud = WordCloud(width = 4000, height = 3000, random_state=1, background_color='black', colormap='Set2', collocations=False, stopwords = STOPWORDS).generate(text)
     #plot wordcloud
     #plot_cloud(wordcloud)
     #freq.append(WordCloud().process_text(text))
     # Save image
-    wordcloud.to_file(f"results/wordcloud-file{i}.png")
+    #wordcloud.to_file(f"results/wordcloud-file{i}.png")
     freq_word.append(WordCloud().process_text(text))
     #counter_words = pd.DataFrame(WordCloud().process_text(text))
 
     #freq = (WordCloud().process_text(text))
     #save_frequency_words(WordCloud().process_text(text),i)
     #print("Added in report")
+    
+    
+    color = cm.inferno_r(np.linspace(.4, .8, 30))
+    x = [{k: random.randint(1, 5)} for k in range(30)]
+
     df = pd.DataFrame(freq_word[i].items(), columns=['keyword', 'count'])
     df = df.head(n=50)
     df = df.sort_values(by=['count'],ascending=False)
-    bar_chart = df.plot.bar(x='keyword',y='count',figsize=(25,15))
-    fig = bar_chart.get_figure()
+    bar_chart = df.plot(kind="barh",x='keyword',y='count',color=color,figsize=(25,20),fontsize=11)
+    ax = bar_chart
+    
+    # set individual bar lables using above list
+    for j in ax.patches:
+        # get_width pulls left or right; get_y pushes up or down
+        ax.text(j.get_width()+.05, j.get_y()+.45, \
+                str(round((j.get_width()), 2)), fontsize=13)
+    
+    # invert for largest on top 
+    ax.invert_yaxis()
+    
+    fig = ax.get_figure()
     fig.savefig(f"results/barchart-file{i}.pdf")
 
 
