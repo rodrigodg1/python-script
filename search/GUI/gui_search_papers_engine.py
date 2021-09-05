@@ -32,14 +32,14 @@ import os
 
 #create gui elements
 window = Tk()
-window.resizable(False, False)
+window.resizable(True, True)
 window.title("Search Engine v1.0")
-window.geometry('980x680')
-lbl_String = Label(window, text="String",font='Helvetica 14 bold')
+window.geometry('890x610')
+lbl_String = Label(window, text="String",font='Helvetica 10 bold')
 lbl_String.grid(column=0, row=0)
 lbl_String.place(x=10,y=20)
 
-txt_String = Entry(window,width=98)
+txt_String = Entry(window,width=135)
 txt_String.grid(column=1, row=0)
 txt_String.place(x=60,y=10,height=40)
 
@@ -98,7 +98,7 @@ def track_change_to_text_to_blue(event):
 
 
 
-txt_edit=scrolledtext.ScrolledText(window,width=85, height=25, wrap=tk.WORD,font='Consolas 16')  
+txt_edit=scrolledtext.ScrolledText(window,width=95, height=19, wrap=tk.WORD,font='Consolas 12')  
 txt_edit.bind('<F1>', track_change_to_text_to_dark)
 txt_edit.bind('<F2>', track_change_to_text_to_light)
 txt_edit.bind('<F3>', track_change_to_text_to_blue)
@@ -125,11 +125,11 @@ lbl_String_file_size.place(x=18,y=105)
 
 
 #autosaving
-path_file_save_this = "/Users/rodrigodutra/Desktop/python-script/search/GUI/blank_file.txt"
+path_file_save_this = "C:/Users/rodri/OneDrive/Desktop/python-script/search/GUI/blank_file.txt"
 
 
 def clear_file(name):
-    file_to_remove_path = f"/Users/rodrigodutra/Desktop/python-script/search/GUI/{name}.txt"
+    file_to_remove_path = f"/Users/rodri/OneDrive/Desktop/python-script/search/GUI/{name}.txt"
     arquivo = open(file_to_remove_path,'w')
     arquivo.write("")
     arquivo.close()
@@ -359,8 +359,8 @@ def autosave():
         old_count_char = count_char
     
 
-    file_size_updated = f"{get_file_size(path_file_save_this)} bytes | {count_char} chars"
-    display_text_file_size.set(file_size_updated)    
+    #file_size_updated = f"{get_file_size(path_file_save_this)} bytes | {count_char} chars"
+    #display_text_file_size.set(file_size_updated)    
         
     time_in_s = 5
     time_to_auto_save_in_ms = time_in_s * 1000
@@ -371,25 +371,26 @@ def autosave():
 
 
 
-myFont = font.Font(size=15)
+myFont = font.Font(size=8)
 
 #btn elements
+align_engine_google_drive_btn = 65
 btn_engine = Button(window,text="Engine", command=engine_clicked)
 btn_engine.config( height = 2, width = 9 )
-btn_engine.place(x=500,y=58)
+btn_engine.place(x=500,y=align_engine_google_drive_btn)
 btn_engine.config(fg='black')
 btn_engine['font'] = myFont
 
 btn_google = Button(window, text="Google", command=google_clicked)
 btn_google.config( height = 2, width = 9 )
-btn_google.place(x=630,y=58)
+btn_google.place(x=570,y=align_engine_google_drive_btn)
 btn_google.config(fg='blue')
 btn_google['font'] = myFont
 
 
 btn_drive = Button(window, text="Up. To Drive", command=drive_upload)
 btn_drive.config( height = 2, width = 9 )
-btn_drive.place(x=760,y=58)
+btn_drive.place(x=640,y=align_engine_google_drive_btn)
 btn_drive.config(fg='black')
 btn_drive['font'] = myFont
 
@@ -401,21 +402,23 @@ btn_drive['font'] = myFont
 
 
 
+new_save_open_btn_y= 530
+
 btn_new = Button(window, text="New", command=new_file)
-btn_new.config( height = 2, width = 9 )
-btn_new.place(x=15,y=620)
+btn_new.config( height = 1, width = 9 )
+btn_new.place(x=15,y=new_save_open_btn_y)
 btn_new.config(fg='Black')
 btn_new['font'] = myFont
 
 btn_open = Button(window, text="Open", command=open_file)
-btn_open.config( height = 2, width = 9 )
-btn_open.place(x=140,y=620)
+btn_open.config( height = 1, width = 9 )
+btn_open.place(x=90,y=new_save_open_btn_y)
 btn_open.config(fg='Black')
 btn_open['font'] = myFont
 
 btn_save_as = Button(window, text="Save as...", command=save_file)
-btn_save_as.config( height = 2, width = 9 )
-btn_save_as.place(x=265,y=620)
+btn_save_as.config( height = 1, width = 9 )
+btn_save_as.place(x=165,y=new_save_open_btn_y)
 btn_save_as.config(fg='Black')
 btn_save_as['font'] = myFont
 
