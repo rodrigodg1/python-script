@@ -28,7 +28,7 @@ from pydrive.drive import GoogleDrive
 import os
 
 
-path_gui_directory = '/Users/rodrigodutra/Desktop/python-script/search/GUI'
+path_gui_directory = "C:/Users/rodri/OneDrive/Desktop/python-script/search/GUI"
 
 #path_to_save = '/Users/rodrigodutra/Desktop/python-script/search/GUI/history_strings_papers.txt'
 
@@ -36,12 +36,12 @@ path_gui_directory = '/Users/rodrigodutra/Desktop/python-script/search/GUI'
 window = Tk()
 window.resizable(True, True)
 window.title("Search Engine v1.0")
-window.geometry('890x610')
+window.geometry('1024x720')
 lbl_String = Label(window, text="String",font='Helvetica 10 bold')
 lbl_String.grid(column=0, row=0)
 lbl_String.place(x=10,y=20)
 
-txt_String = Entry(window,width=135)
+txt_String = Entry(window,width=135,font='Helvetica 14')
 txt_String.grid(column=1, row=0)
 txt_String.place(x=60,y=10,height=40)
 
@@ -100,7 +100,7 @@ def track_change_to_text_to_blue(event):
 
 
 
-txt_edit=scrolledtext.ScrolledText(window,width=95, height=19, wrap=tk.WORD,font='Consolas 12')  
+txt_edit=scrolledtext.ScrolledText(window,width=138, height=20, wrap=tk.WORD,font='Consolas 12')  
 txt_edit.bind('<F1>', track_change_to_text_to_dark)
 txt_edit.bind('<F2>', track_change_to_text_to_light)
 txt_edit.bind('<F3>', track_change_to_text_to_blue)
@@ -114,7 +114,7 @@ txt_edit.place(x=10,y=135)
 
 display_text = tk.StringVar()
 lbl_String_Saving = Label(window,textvariable=display_text, text="...",font='Helvetica 14')
-lbl_String_Saving.place(x=820,y=635)
+lbl_String_Saving.place(x=820,y=560)
 
 
 display_text_file_size = tk.StringVar()
