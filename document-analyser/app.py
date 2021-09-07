@@ -11,6 +11,7 @@ import os
 import pandas as pd
 from matplotlib import cm
 import random
+import PyPDF2 
 
 
 
@@ -60,8 +61,18 @@ def get_text_from_pdf(file_name):
     raw = parser.from_file(file_name)
     text = raw['content']
     text = re.sub(r'==.*?==+', '', text)
+    text = re.sub(r"^\d+\s|\s\d+\s|\s\d+$", " ", text)
+    text = re.sub(r"\b\d+\b", " ", text)
+    text = re.sub(r"\bPhD", " ", text)
+    text = re.sub(r"\bEmail", " ", text)
+    text = re.sub(r"\bPhone", " ", text)
+    text = re.sub(r"\bgmail", " ", text)
+    text = re.sub(r"\buniversity", " ", text)
+    text = re.sub(r"\need", " ", text)
+
     text = text.replace('\n', '')
     return text
+
 
 
 def count_pdf_files():
@@ -85,7 +96,7 @@ for i in range(0, count_pdf):
     
     if(op == 'y'):
         
-        words_to_remove_en = ['arxiv','fig','tab','article','paper'
+        words_to_remove_en = ['gmail','section','email','mail','phone','author','phd','university','using','arxiv','fig','tab','article','paper'
                      ,'still','downloaded','licensed',
                      "de",'what','who','is','a','at',
                      'is','he','used','ieee','org','doi',
@@ -120,7 +131,7 @@ for i in range(0, count_pdf):
         text = filtered_sentence
         
     else:
-         print(f"\nfilters not will be applied on file{i}")
+         print(f"\nfilters will not be applied on file{i}")
         
         
         
@@ -143,7 +154,7 @@ for i in range(0, count_pdf):
     x = [{k: random.randint(1, 5)} for k in range(30)]
 
     df = pd.DataFrame(freq_word[i].items(), columns=['keyword', 'count'])
-    df = df.head(n=50)
+    df = df.head(n=100)
     df = df.sort_values(by=['count'],ascending=False)
     bar_chart = df.plot(kind="barh",x='keyword',y='count',color=color,figsize=(25,20),fontsize=11)
     ax = bar_chart

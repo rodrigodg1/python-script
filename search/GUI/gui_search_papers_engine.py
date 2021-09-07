@@ -28,7 +28,7 @@ from pydrive.drive import GoogleDrive
 import os
 
 
-path_gui_directory = "C:/Users/rodri/OneDrive/Desktop/python-script/search/GUI"
+path_gui_directory = "/Users/rodrigodutra/Desktop/python-script/search/GUI"
 
 #path_to_save = '/Users/rodrigodutra/Desktop/python-script/search/GUI/history_strings_papers.txt'
 
@@ -379,20 +379,20 @@ myFont = font.Font(size=8)
 align_engine_google_drive_btn = 65
 btn_engine = Button(window,text="Engine", command=engine_clicked)
 btn_engine.config( height = 2, width = 9 )
-btn_engine.place(x=500,y=align_engine_google_drive_btn)
+btn_engine.place(x=490,y=align_engine_google_drive_btn)
 btn_engine.config(fg='black')
 btn_engine['font'] = myFont
 
 btn_google = Button(window, text="Google", command=google_clicked)
 btn_google.config( height = 2, width = 9 )
-btn_google.place(x=570,y=align_engine_google_drive_btn)
+btn_google.place(x=590,y=align_engine_google_drive_btn)
 btn_google.config(fg='blue')
 btn_google['font'] = myFont
 
 
 btn_drive = Button(window, text="Up. To Drive", command=drive_upload)
 btn_drive.config( height = 2, width = 9 )
-btn_drive.place(x=640,y=align_engine_google_drive_btn)
+btn_drive.place(x=690,y=align_engine_google_drive_btn)
 btn_drive.config(fg='black')
 btn_drive['font'] = myFont
 
