@@ -22,13 +22,13 @@ from tkinter import scrolledtext
 import tkinter.messagebox
 import tkinter.font as font
 import time
-from pydrive.auth import GoogleAuth
-from pydrive.drive import GoogleDrive
+#from pydrive.auth import GoogleAuth
+#from pydrive.drive import GoogleDrive
 
 import os
 
 
-path_gui_directory = "/Users/rodrigodutra/Desktop/python-script/search/GUI"
+path_gui_directory = "/Users/rodrigo/Desktop/python-script/search/GUI"
 
 #path_to_save = '/Users/rodrigodutra/Desktop/python-script/search/GUI/history_strings_papers.txt'
 
@@ -122,10 +122,6 @@ lbl_String_file_size = Label(window,textvariable=display_text_file_size, text=".
 lbl_String_file_size.place(x=18,y=105)
 
 
-
-
-
-
 #autosaving
 path_file_save_this = f"{path_gui_directory}/blank_file.txt"
 
@@ -193,7 +189,7 @@ def save_changes():
     
     
 
-
+"""
 #if drive upload button
 def drive_upload():
     
@@ -216,7 +212,7 @@ def drive_upload():
         
     except:
         alert_msg("Fail !")
-
+"""
 
 def get_date_and_hour():
     date_ = datetime.datetime.now()
@@ -376,6 +372,7 @@ def autosave():
 myFont = font.Font(size=8)
 
 #btn elements
+
 align_engine_google_drive_btn = 65
 btn_engine = Button(window,text="Engine", command=engine_clicked)
 btn_engine.config( height = 2, width = 9 )
@@ -390,11 +387,14 @@ btn_google.config(fg='blue')
 btn_google['font'] = myFont
 
 
+"""
 btn_drive = Button(window, text="Up. To Drive", command=drive_upload)
 btn_drive.config( height = 2, width = 9 )
 btn_drive.place(x=690,y=align_engine_google_drive_btn)
 btn_drive.config(fg='black')
 btn_drive['font'] = myFont
+"""
+
 
 #btn_save = Button(window, text="Save Changes", command=save_changes)
 #btn_save.config( height = 1, width = 9 )
