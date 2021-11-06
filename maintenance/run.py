@@ -60,6 +60,10 @@ def install_dev_packages():
     time.sleep(3)
     os.system("sudo apt install python3-pip")
 
+
+
+    
+
 while (True):
     op = input("""
 1 - System Information (screenfetch) and IP Address 
