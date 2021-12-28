@@ -1,0 +1,3 @@
+Categoria1, 30
+Categoria2, 50
+Categoria3, 90
