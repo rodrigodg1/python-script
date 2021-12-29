@@ -36,12 +36,12 @@ path_gui_directory = "/Users/rodrigo/Desktop/python-script/search/GUI"
 window = Tk()
 window.resizable(True, True)
 window.title("Search Engine v1.0")
-window.geometry('1024x720')
+window.geometry('1024x620')
 lbl_String = Label(window, text="String",font='Helvetica 10 bold')
 lbl_String.grid(column=0, row=0)
 lbl_String.place(x=10,y=20)
 
-txt_String = Entry(window,width=135,font='Helvetica 14')
+txt_String = Entry(window,width=115,font='Helvetica 14')
 txt_String.grid(column=1, row=0)
 txt_String.place(x=60,y=10,height=40)
 
@@ -100,7 +100,7 @@ def track_change_to_text_to_blue(event):
 
 
 
-txt_edit=scrolledtext.ScrolledText(window,width=138, height=20, wrap=tk.WORD,font='Consolas 12')  
+txt_edit=scrolledtext.ScrolledText(window,width=118, height=20, wrap=tk.WORD,font='Consolas 12')  
 txt_edit.bind('<F1>', track_change_to_text_to_dark)
 txt_edit.bind('<F2>', track_change_to_text_to_light)
 txt_edit.bind('<F3>', track_change_to_text_to_blue)
@@ -239,7 +239,7 @@ def google_clicked():
 
         print(path_file_save_this)
         arquivo = open(path_file_save_this,'a')
-        arquivo.write(str(txt_String.get()) + " , " + "GOOGLE" + ' , ' + date_ + " , "+ hour_ +'\n')
+        arquivo.write(str(txt_String.get()) + " , " + "GOOGLE" + ', ' + date_ + ", "+ hour_ +'\n')
         arquivo.close()
         
         
@@ -274,7 +274,7 @@ def engine_clicked():
         date_,hour_ = get_date_and_hour()
 
         arquivo = open(path_file_save_this,'a')
-        arquivo.write(str(txt_String.get()) + " " + convert_list_to_string(engines_names) + ' , ' + date_ + " , "+ hour_ +'\n')
+        arquivo.write(str(txt_String.get()) + " " + convert_list_to_string(engines_names) + ', ' + date_ + ", "+ hour_ +'\n')
         arquivo.close()
         
         
