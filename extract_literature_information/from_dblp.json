@@ -1,132 +1,282 @@
 {
 "result":{
-"query":"blockchain* and* privacy* and* survey*",
+"query":"blockchain* data* privacy* :filter:year:2021*",
 "status":{
 "@code":"200",
 "text":"OK"
 },
 "time":{
 "@unit":"msecs",
-"text":"193.30"
+"text":"2.52"
 },
 "completions":{
 "@total":"1",
 "@computed":"1",
 "@sent":"1",
 "c":{
-"@sc":"17",
-"@dc":"17",
-"@oc":"17",
-"@id":"44466652",
-"text":"survey"
+"@sc":"42",
+"@dc":"42",
+"@oc":"42",
+"@id":"43035151",
+"text":":filter:year:2021"
 }
 },
 "hits":{
-"@total":"17",
-"@computed":"17",
-"@sent":"17",
+"@total":"42",
+"@computed":"42",
+"@sent":"42",
 "@first":"0",
 "hit":[{
-"@score":"9",
-"@id":"964222",
-"info":{"authors":{"author":[{"@pid":"280/5400","text":"Hasventhran Baskaran"},{"@pid":"95/6326","text":"Salman Yussof"},{"@pid":"145/8243","text":"Fiza Abdul Rahim"}]},"title":"A Survey on Privacy Concerns in Blockchain Applications and Current Blockchain Solutions to Preserve Data Privacy.","venue":"ACeS","pages":"3-17","year":"2019","type":"Conference and Workshop Papers","access":"closed","key":"conf/aces/BaskaranYR19","doi":"10.1007/978-981-15-2693-0_1","ee":"https://doi.org/10.1007/978-981-15-2693-0_1","url":"https://dblp.org/rec/conf/aces/BaskaranYR19"},
-"url":"URL#964222"
-},
-{
-"@score":"7",
-"@id":"36778",
-"info":{"authors":{"author":[{"@pid":"42/6662","text":"Bharat Bhushan"},{"@pid":"283/5703","text":"Preeti Sinha"},{"@pid":"200/5535","text":"Kulandairaj Martin Sagayam"},{"@pid":"290/2416","text":"J. Andrew Onesimu"}]},"title":"Untangling blockchain technology - A survey on state of the art, security threats, privacy services, applications and future research directions.","venue":"Comput. Electr. Eng.","volume":"90","pages":"106897","year":"2021","type":"Journal Articles","access":"closed","key":"journals/cee/BhushanSSJ21","doi":"10.1016/J.COMPELECENG.2020.106897","ee":"https://doi.org/10.1016/j.compeleceng.2020.106897","url":"https://dblp.org/rec/journals/cee/BhushanSSJ21"},
-"url":"URL#36778"
-},
-{
-"@score":"7",
-"@id":"578051",
-"info":{"authors":{"author":[{"@pid":"224/0475","text":"Komal Gilani"},{"@pid":"99/837","text":"Emmanuel Bertin"},{"@pid":"199/9685","text":"Julien Hatin"},{"@pid":"84/4327","text":"Noël Crespi"}]},"title":"A Survey on Blockchain-based Identity Management and Decentralized Privacy for Personal Data.","venue":"BRAINS","pages":"97-101","year":"2020","type":"Conference and Workshop Papers","access":"closed","key":"conf/brains/GilaniBHC20","doi":"10.1109/BRAINS49436.2020.9223312","ee":"https://doi.org/10.1109/BRAINS49436.2020.9223312","url":"https://dblp.org/rec/conf/brains/GilaniBHC20"},
-"url":"URL#578051"
+"@score":"5",
+"@id":"81581",
+"info":{"authors":{"author":[{"@pid":"170/8225","text":"Thiago Pereira da Nóbrega"},{"@pid":"59/4336","text":"Carlos Eduardo S. Pires"},{"@pid":"165/3698","text":"Dimas Cassimiro do Nascimento"}]},"title":"Blockchain-based Privacy-Preserving Record Linkage - enhancing data privacy in an untrusted environment.","venue":"Inf. Syst.","volume":"102","pages":"101826","year":"2021","type":"Journal Articles","access":"closed","key":"journals/is/NobregaPN21","doi":"10.1016/J.IS.2021.101826","ee":"https://doi.org/10.1016/j.is.2021.101826","url":"https://dblp.org/rec/journals/is/NobregaPN21"},
+"url":"URL#81581"
 },
 {
 "@score":"5",
-"@id":"39200",
-"info":{"authors":{"author":[{"@pid":"18/5116","text":"Omar Alfandi"},{"@pid":"183/2060","text":"Salam Ismail Rasheed Khanji"},{"@pid":"271/4794","text":"Liza Ahmad"},{"@pid":"63/2017","text":"Asad Masood Khattak"}]},"title":"A survey on boosting IoT security and privacy through blockchain.","venue":"Clust. Comput.","volume":"24","number":"1","pages":"37-55","year":"2021","type":"Journal Articles","access":"closed","key":"journals/cluster/AlfandiKAK21","doi":"10.1007/S10586-020-03137-8","ee":"https://doi.org/10.1007/s10586-020-03137-8","url":"https://dblp.org/rec/journals/cluster/AlfandiKAK21"},
-"url":"URL#39200"
+"@id":"90906",
+"info":{"authors":{"author":[{"@pid":"245/7572","text":"Hjalmar K. Turesson"},{"@pid":"28/5851","text":"Henry M. Kim"},{"@pid":"97/1022","text":"Marek Laskowski"},{"@pid":"95/8398","text":"Alexandra Roatis"}]},"title":"Privacy Preserving Data Mining as Proof of Useful Work - Exploring an AI/Blockchain Design.","venue":"J. Database Manag.","volume":"32","number":"1","pages":"69-85","year":"2021","type":"Journal Articles","access":"closed","key":"journals/jdm/TuressonKLR21","doi":"10.4018/JDM.2021010104","ee":"https://doi.org/10.4018/JDM.2021010104","url":"https://dblp.org/rec/journals/jdm/TuressonKLR21"},
+"url":"URL#90906"
 },
 {
-"@score":"5",
-"@id":"94963",
-"info":{"authors":{"author":[{"@pid":"216/3987","text":"Yunyoung Lee"},{"@pid":"301/3048","text":"Bumho Son"},{"@pid":"301/2930","text":"Seongwan Park"},{"@pid":"39/4985-1","text":"Jaewook Lee 0001"},{"@pid":"192/7608","text":"Huisu Jang"}]},"title":"A Survey on Security and Privacy in Blockchain-based Central Bank Digital Currencies.","venue":"J. Internet Serv. Inf. Secur.","volume":"11","number":"3","pages":"16-29","year":"2021","type":"Journal Articles","access":"open","key":"journals/jisis/LeeSP0J21","doi":"10.22667/JISIS.2021.08.31.016","ee":"https://doi.org/10.22667/JISIS.2021.08.31.016","url":"https://dblp.org/rec/journals/jisis/LeeSP0J21"},
-"url":"URL#94963"
+"@score":"4",
+"@id":"37031",
+"info":{"authors":{"author":[{"@pid":"18/1048","text":"Parminder Singh"},{"@pid":"81/1909","text":"Mehedi Masud"},{"@pid":"66/5574","text":"M. Shamim Hossain"},{"@pid":"241/6713","text":"Avinash Kaur"}]},"title":"Blockchain and homomorphic encryption-based privacy-preserving data aggregation model in smart grid.","venue":"Comput. Electr. Eng.","volume":"93","pages":"107209","year":"2021","type":"Journal Articles","access":"closed","key":"journals/cee/SinghMHK21","doi":"10.1016/J.COMPELECENG.2021.107209","ee":"https://doi.org/10.1016/j.compeleceng.2021.107209","url":"https://dblp.org/rec/journals/cee/SinghMHK21"},
+"url":"URL#37031"
 },
 {
-"@score":"5",
-"@id":"114588",
-"info":{"authors":{"author":[{"@pid":"219/3619","text":"Quang Nhat Tran"},{"@pid":"83/6246","text":"Benjamin P. Turnbull"},{"@pid":"21/2481","text":"Hao-Tian Wu"},{"@pid":"286/1621","text":"A. J. S. de Silva"},{"@pid":"286/0771","text":"Katerina Kormusheva"},{"@pid":"99/5144","text":"Jiankun Hu"}]},"title":"A Survey on Privacy-Preserving Blockchain Systems (PPBS) and a Novel PPBS-Based Framework for Smart Agriculture.","venue":"IEEE Open J. Comput. Soc.","volume":"2","pages":"72-84","year":"2021","type":"Journal Articles","access":"open","key":"journals/ojcomps/TranTWSKH21","doi":"10.1109/OJCS.2021.3053032","ee":"https://doi.org/10.1109/OJCS.2021.3053032","url":"https://dblp.org/rec/journals/ojcomps/TranTWSKH21"},
-"url":"URL#114588"
+"@score":"4",
+"@id":"39291",
+"info":{"authors":{"author":[{"@pid":"75/8193","text":"Yanhui Liu"},{"@pid":"227/4261","text":"Jianbiao Zhang"},{"@pid":"59/6479","text":"Jing Zhan"}]},"title":"Privacy protection for fog computing and the internet of things data based on blockchain.","venue":"Clust. Comput.","volume":"24","number":"2","pages":"1331-1345","year":"2021","type":"Journal Articles","access":"closed","key":"journals/cluster/LiuZZ21","doi":"10.1007/S10586-020-03190-3","ee":"https://doi.org/10.1007/s10586-020-03190-3","url":"https://dblp.org/rec/journals/cluster/LiuZZ21"},
+"url":"URL#39291"
 },
 {
-"@score":"5",
-"@id":"166102",
-"info":{"authors":{"author":[{"@pid":"227/9412","text":"Branka Mikavica"},{"@pid":"04/10232","text":"Aleksandra Kostic-Ljubisavljevic"}]},"title":"Blockchain-based solutions for security, privacy, and trust management in vehicular networks - a survey.","venue":"J. Supercomput.","volume":"77","number":"9","pages":"9520-9575","year":"2021","type":"Journal Articles","access":"closed","key":"journals/tjs/MikavicaK21","doi":"10.1007/S11227-021-03659-X","ee":"https://doi.org/10.1007/s11227-021-03659-x","url":"https://dblp.org/rec/journals/tjs/MikavicaK21"},
-"url":"URL#166102"
+"@score":"4",
+"@id":"44617",
+"info":{"authors":{"author":[{"@pid":"220/8825","text":"Junhoo Park"},{"@pid":"285/9323","text":"Hyekjin Kim"},{"@pid":"220/8717","text":"GeunYoung Kim"},{"@pid":"74/1775","text":"Jaecheol Ryou 0001"}]},"title":"Smart Contract Data Feed Framework for Privacy-Preserving Oracle System on Blockchain.","venue":"Comput.","volume":"10","number":"1","pages":"7","year":"2021","type":"Journal Articles","access":"open","key":"journals/computers/ParkKKR21","doi":"10.3390/COMPUTERS10010007","ee":"https://doi.org/10.3390/computers10010007","url":"https://dblp.org/rec/journals/computers/ParkKKR21"},
+"url":"URL#44617"
 },
 {
-"@score":"5",
-"@id":"250535",
-"info":{"authors":{"author":[{"@pid":"308/7078","text":"Constance Hendrix"},{"@pid":"308/6428","text":"Rory Lewis"}]},"title":"Survey on Blockchain Privacy Challenges.","venue":"PoEM Workshops","pages":"55-63","year":"2021","type":"Conference and Workshop Papers","access":"open","key":"conf/ifip8-1/HendrixL21","ee":"http://ceur-ws.org/Vol-3031/paper_5.pdf","url":"https://dblp.org/rec/conf/ifip8-1/HendrixL21"},
-"url":"URL#250535"
+"@score":"4",
+"@id":"58356",
+"info":{"authors":{"author":[{"@pid":"14/1793","text":"Jing Gong"},{"@pid":"266/3957","text":"Yurong Mei"},{"@pid":"143/6446","text":"Feng Xiang"},{"@pid":"183/1581","text":"Hanshu Hong"},{"@pid":"32/7981","text":"Yibo Sun"},{"@pid":"09/5754","text":"Zhixin Sun"}]},"title":"A data privacy protection scheme for Internet of things based on blockchain.","venue":"Trans. Emerg. Telecommun. Technol.","volume":"32","number":"5","year":"2021","type":"Journal Articles","access":"closed","key":"journals/ett/GongMXHSS21","doi":"10.1002/ETT.4010","ee":"https://doi.org/10.1002/ett.4010","url":"https://dblp.org/rec/journals/ett/GongMXHSS21"},
+"url":"URL#58356"
 },
 {
-"@score":"5",
-"@id":"397243",
-"info":{"authors":{"author":[{"@pid":"23/2060","text":"Dan Wang"},{"@pid":"37/3228","text":"Jindong Zhao"},{"@pid":"33/6297-2","text":"Yingjie Wang 0002"}]},"title":"A Survey on Privacy Protection of Blockchain - The Technology and Application.","venue":"IEEE Access","volume":"8","pages":"108766-108781","year":"2020","type":"Journal Articles","access":"open","key":"journals/access/WangZW20","doi":"10.1109/ACCESS.2020.2994294","ee":"https://doi.org/10.1109/ACCESS.2020.2994294","url":"https://dblp.org/rec/journals/access/WangZW20"},
-"url":"URL#397243"
+"@score":"4",
+"@id":"59918",
+"info":{"authors":{"author":[{"@pid":"25/4625","text":"Zeng Chen"},{"@pid":"99/6891","text":"Weidong Xu"},{"@pid":"297/8242","text":"Bingtao Wang"},{"@pid":"02/2407","text":"Hua Yu"}]},"title":"A blockchain-based preserving and sharing system for medical data privacy.","venue":"Future Gener. Comput. Syst.","volume":"124","pages":"338-350","year":"2021","type":"Journal Articles","access":"closed","key":"journals/fgcs/ChenXWY21","doi":"10.1016/J.FUTURE.2021.05.023","ee":"https://doi.org/10.1016/j.future.2021.05.023","url":"https://dblp.org/rec/journals/fgcs/ChenXWY21"},
+"url":"URL#59918"
 },
 {
-"@score":"5",
-"@id":"423711",
-"info":{"authors":{"author":[{"@pid":"273/9268","text":"Shuyun Shi"},{"@pid":"87/7765","text":"Debiao He"},{"@pid":"53/2189-73","text":"Li Li 0073"},{"@pid":"04/8395","text":"Neeraj Kumar 0001"},{"@pid":"69/821","text":"Muhammad Khurram Khan"},{"@pid":"c/KimKwangRaymondChoo","text":"Kim-Kwang Raymond Choo"}]},"title":"Applications of blockchain in ensuring the security and privacy of electronic health record systems - A survey.","venue":"Comput. Secur.","volume":"97","pages":"101966","year":"2020","type":"Journal Articles","access":"closed","key":"journals/compsec/ShiHLKKC20","doi":"10.1016/J.COSE.2020.101966","ee":"https://doi.org/10.1016/j.cose.2020.101966","url":"https://dblp.org/rec/journals/compsec/ShiHLKKC20"},
-"url":"URL#423711"
+"@score":"4",
+"@id":"60567",
+"info":{"authors":{"author":[{"@pid":"69/10194","text":"Baocheng Wang"},{"@pid":"89/4798","text":"Zetao Li"}]},"title":"Healthchain - A Privacy Protection System for Medical Data Based on Blockchain.","venue":"Future Internet","volume":"13","number":"10","pages":"247","year":"2021","type":"Journal Articles","access":"open","key":"journals/fi/WangL21","doi":"10.3390/FI13100247","ee":"https://doi.org/10.3390/fi13100247","url":"https://dblp.org/rec/journals/fi/WangL21"},
+"url":"URL#60567"
 },
 {
-"@score":"5",
-"@id":"557675",
-"info":{"authors":{"author":[{"@pid":"15/3770","text":"Ying Ma"},{"@pid":"62/3689","text":"Yu Sun"},{"@pid":"244/5199","text":"Yunjie Lei"},{"@pid":"167/6517","text":"Nan Qin"},{"@pid":"164/0012","text":"Junwen Lu"}]},"title":"A survey of blockchain technology on security, privacy, and trust in crowdsourcing services.","venue":"World Wide Web","volume":"23","number":"1","pages":"393-419","year":"2020","type":"Journal Articles","access":"closed","key":"journals/www/MaSLQL20","doi":"10.1007/S11280-019-00735-4","ee":"https://doi.org/10.1007/s11280-019-00735-4","url":"https://dblp.org/rec/journals/www/MaSLQL20"},
-"url":"URL#557675"
+"@score":"4",
+"@id":"66223",
+"info":{"authors":{"author":[{"@pid":"235/6940","text":"Sandi Rahmadika"},{"@pid":"80/2281","text":"Kyung-Hyune Rhee"}]},"title":"Enhancing data privacy through a decentralised predictive model with blockchain-based revenue.","venue":"Int. J. Ad Hoc Ubiquitous Comput.","volume":"37","number":"1","pages":"1-15","year":"2021","type":"Journal Articles","access":"closed","key":"journals/ijahuc/RahmadikaR21","doi":"10.1504/IJAHUC.2021.115104","ee":"https://doi.org/10.1504/IJAHUC.2021.115104","url":"https://dblp.org/rec/journals/ijahuc/RahmadikaR21"},
+"url":"URL#66223"
 },
 {
-"@score":"5",
-"@id":"585697",
-"info":{"authors":{"author":[{"@pid":"277/8088","text":"Sergio Marciante"},{"@pid":"92/2688","text":"Álvaro Herrero"}]},"title":"The Evolution of Privacy in the Blockchain - A Historical Survey.","venue":"CISIS","pages":"23-34","year":"2020","type":"Conference and Workshop Papers","access":"closed","key":"conf/cisis-spain/MarcianteH20","doi":"10.1007/978-3-030-57805-3_3","ee":"https://doi.org/10.1007/978-3-030-57805-3_3","url":"https://dblp.org/rec/conf/cisis-spain/MarcianteH20"},
-"url":"URL#585697"
+"@score":"4",
+"@id":"72120",
+"info":{"authors":{"author":[{"@pid":"71/7666","text":"Qikun Zhang"},{"@pid":"251/5429","text":"Yongjiao Li"},{"@pid":"35/8027","text":"Ruifang Wang"},{"@pid":"31/2088","text":"Lu Liu"},{"@pid":"81/3736","text":"Yu-an Tan"},{"@pid":"98/942","text":"Jingjing Hu"}]},"title":"Data security sharing model based on privacy protection for blockchain-enabled industrial Internet of Things.","venue":"Int. J. Intell. Syst.","volume":"36","number":"1","pages":"94-111","year":"2021","type":"Journal Articles","access":"closed","key":"journals/ijis/ZhangLWLTH21","doi":"10.1002/INT.22293","ee":"https://doi.org/10.1002/int.22293","url":"https://dblp.org/rec/journals/ijis/ZhangLWLTH21"},
+"url":"URL#72120"
 },
 {
-"@score":"5",
-"@id":"771078",
-"info":{"authors":{"author":[{"@pid":"232/0373","text":"Phan The Duy"},{"@pid":"232/0362","text":"Do Thi Thu Hien"},{"@pid":"13/5508","text":"Van-Hau Pham"}]},"title":"A survey on Blockchain-based applications for reforming data protection, privacy and security.","venue":"CoRR","volume":"abs/2009.00530","year":"2020","type":"Informal Publications","access":"open","key":"journals/corr/abs-2009-00530","ee":"https://arxiv.org/abs/2009.00530","url":"https://dblp.org/rec/journals/corr/abs-2009-00530"},
-"url":"URL#771078"
+"@score":"4",
+"@id":"79908",
+"info":{"authors":{"author":[{"@pid":"95/8789","text":"Jingyu Feng"},{"@pid":"70/4828","text":"Yin Wang"},{"@pid":"52/6458","text":"Jialin Wang"},{"@pid":"90/6613","text":"Fang Ren"}]},"title":"Blockchain-Based Data Management and Edge-Assisted Trusted Cloaking Area Construction for Location Privacy Protection in Vehicular Networks.","venue":"IEEE Internet Things J.","volume":"8","number":"4","pages":"2087-2101","year":"2021","type":"Journal Articles","access":"closed","key":"journals/iotj/FengWWR21","doi":"10.1109/JIOT.2020.3038468","ee":"https://doi.org/10.1109/JIOT.2020.3038468","url":"https://dblp.org/rec/journals/iotj/FengWWR21"},
+"url":"URL#79908"
 },
 {
-"@score":"5",
-"@id":"877174",
-"info":{"authors":{"author":[{"@pid":"255/0532","text":"Bhabendu Kumar Mohanta"},{"@pid":"10/6006","text":"Debasish Jena"},{"@pid":"236/9121","text":"Soumyashree S. Panda"},{"@pid":"199/4706","text":"Srichandan Sobhanayak"}]},"title":"Blockchain technology - A survey on applications and security privacy Challenges.","venue":"Internet Things","volume":"8","year":"2019","type":"Journal Articles","access":"closed","key":"journals/iot/MohantaJPS19","doi":"10.1016/J.IOT.2019.100107","ee":"https://doi.org/10.1016/j.iot.2019.100107","url":"https://dblp.org/rec/journals/iot/MohantaJPS19"},
-"url":"URL#877174"
+"@score":"4",
+"@id":"81265",
+"info":{"authors":{"author":[{"@pid":"265/5076","text":"Ken Miyachi"},{"@pid":"211/6775","text":"Timothy Mackey"}]},"title":"hOCBS - A privacy-preserving blockchain framework for healthcare data leveraging an on-chain and off-chain system design.","venue":"Inf. Process. Manag.","volume":"58","number":"3","pages":"102535","year":"2021","type":"Journal Articles","access":"closed","key":"journals/ipm/MiyachiM21","doi":"10.1016/J.IPM.2021.102535","ee":"https://doi.org/10.1016/j.ipm.2021.102535","url":"https://dblp.org/rec/journals/ipm/MiyachiM21"},
+"url":"URL#81265"
 },
 {
-"@score":"5",
-"@id":"1007546",
-"info":{"authors":{"author":[{"@pid":"20/8147","text":"Mansi Sharma"},{"@pid":"23/5144","text":"Jongtae Lim"}]},"title":"A Survey of Methods Guaranteeing User Privacy based on Blockchain in Internet-of -Things.","venue":"DSIT","pages":"147-153","year":"2019","type":"Conference and Workshop Papers","access":"closed","key":"conf/dsit/SharmaL19","doi":"10.1145/3352411.3352435","ee":"https://doi.org/10.1145/3352411.3352435","url":"https://dblp.org/rec/conf/dsit/SharmaL19"},
-"url":"URL#1007546"
+"@score":"4",
+"@id":"81285",
+"info":{"authors":{"author":[{"@pid":"95/1853","text":"Chunhui Piao"},{"@pid":"260/9439","text":"Yurong Hao"},{"@pid":"79/8041","text":"Jiaqi Yan"},{"@pid":"210/4859","text":"Xuehong Jiang"}]},"title":"Privacy preserving in blockchain-based government data sharing - A Service-On-Chain (SOC) approach.","venue":"Inf. Process. Manag.","volume":"58","number":"5","pages":"102651","year":"2021","type":"Journal Articles","access":"closed","key":"journals/ipm/PiaoHYJ21","doi":"10.1016/J.IPM.2021.102651","ee":"https://doi.org/10.1016/j.ipm.2021.102651","url":"https://dblp.org/rec/journals/ipm/PiaoHYJ21"},
+"url":"URL#81285"
 },
 {
-"@score":"5",
-"@id":"1039748",
-"info":{"authors":{"author":[{"@pid":"245/1544","text":"Yuchong Cui"},{"@pid":"77/6939","text":"Bing Pan"},{"@pid":"23/4511","text":"Yanbin Sun"}]},"title":"A Survey of Privacy-Preserving Techniques for Blockchain.","venue":"ICAIS","pages":"225-234","year":"2019","type":"Conference and Workshop Papers","access":"closed","key":"conf/icccsec/CuiPS19","doi":"10.1007/978-3-030-24268-8_21","ee":"https://doi.org/10.1007/978-3-030-24268-8_21","url":"https://dblp.org/rec/conf/icccsec/CuiPS19"},
-"url":"URL#1039748"
+"@score":"4",
+"@id":"81293",
+"info":{"authors":{"author":[{"@pid":"157/9973","text":"Cristina Regueiro"},{"@pid":"251/2005","text":"Iñaki Seco"},{"@pid":"303/5673","text":"Santiago de Diego"},{"@pid":"119/5219","text":"Oscar Lage"},{"@pid":"303/5474","text":"Leire Etxebarria"}]},"title":"Privacy-enhancing distributed protocol for data aggregation based on blockchain and homomorphic encryption.","venue":"Inf. Process. Manag.","volume":"58","number":"6","pages":"102745","year":"2021","type":"Journal Articles","access":"closed","key":"journals/ipm/RegueiroSDLE21","doi":"10.1016/J.IPM.2021.102745","ee":"https://doi.org/10.1016/j.ipm.2021.102745","url":"https://dblp.org/rec/journals/ipm/RegueiroSDLE21"},
+"url":"URL#81293"
 },
 {
-"@score":"5",
-"@id":"1296454",
-"info":{"authors":{"author":[{"@pid":"256/3458","text":"Archana Prashanth Joshi"},{"@pid":"91/9124","text":"Meng Han"},{"@pid":"59/2227","text":"Yan Wang"}]},"title":"A survey on security and privacy issues of blockchain technology.","venue":"Math. Found. Comput.","volume":"1","number":"2","pages":"121-147","year":"2018","type":"Journal Articles","access":"open","key":"journals/mfc/JoshiHW18","doi":"10.3934/MFC.2018007","ee":"https://doi.org/10.3934/mfc.2018007","url":"https://dblp.org/rec/journals/mfc/JoshiHW18"},
-"url":"URL#1296454"
+"@score":"4",
+"@id":"81389",
+"info":{"authors":{"author":[{"@pid":"252/5594","text":"Renpeng Zou"},{"@pid":"62/882","text":"Xixiang Lv"},{"@pid":"274/6886","text":"Jingsong Zhao"}]},"title":"SPChain - Blockchain-based medical data sharing and privacy-preserving eHealth system.","venue":"Inf. Process. Manag.","volume":"58","number":"4","pages":"102604","year":"2021","type":"Journal Articles","access":"closed","key":"journals/ipm/ZouLZ21","doi":"10.1016/J.IPM.2021.102604","ee":"https://doi.org/10.1016/j.ipm.2021.102604","url":"https://dblp.org/rec/journals/ipm/ZouLZ21"},
+"url":"URL#81389"
+},
+{
+"@score":"4",
+"@id":"111947",
+"info":{"authors":{"author":[{"@pid":"21/9114","text":"Zhihan Lv"},{"@pid":"68/10765-3","text":"Liang Qiao 0003"},{"@pid":"66/5574","text":"M. Shamim Hossain"},{"@pid":"12/7884","text":"Bong Jun Choi"}]},"title":"Analysis of Using Blockchain to Protect the Privacy of Drone Big Data.","venue":"IEEE Netw.","volume":"35","number":"1","pages":"44-49","year":"2021","type":"Journal Articles","access":"closed","key":"journals/network/LvQHC21","doi":"10.1109/MNET.011.2000154","ee":"https://doi.org/10.1109/MNET.011.2000154","url":"https://dblp.org/rec/journals/network/LvQHC21"},
+"url":"URL#111947"
+},
+{
+"@score":"4",
+"@id":"117318",
+"info":{"authors":{"author":[{"@pid":"174/2138","text":"Mercedes Rodriguez-Garcia"},{"@pid":"s/MiguelAngelSicilia","text":"Miguel-Ángel Sicilia"},{"@pid":"36/1408","text":"Juan Manuel Dodero"}]},"title":"A privacy-preserving design for sharing demand-driven patient datasets over permissioned blockchains and P2P secure transfer.","venue":"PeerJ Comput. Sci.","volume":"7","pages":"e568","year":"2021","type":"Journal Articles","access":"open","key":"journals/peerj-cs/Rodriguez-Garcia21","doi":"10.7717/PEERJ-CS.568","ee":"https://doi.org/10.7717/peerj-cs.568","url":"https://dblp.org/rec/journals/peerj-cs/Rodriguez-Garcia21"},
+"url":"URL#117318"
+},
+{
+"@score":"4",
+"@id":"129376",
+"info":{"authors":{"author":[{"@pid":"298/1132","text":"Siriboon Chaisawat"},{"@pid":"45/5068","text":"Chalee Vorakulpipat"}]},"title":"Towards Achieving Personal Privacy Protection and Data Security on Integrated E-Voting Model of Blockchain and Message Queue.","venue":"Secur. Commun. Networks","volume":"2021","pages":"8338616:1-8338616:14","year":"2021","type":"Journal Articles","access":"open","key":"journals/scn/ChaisawatV21","doi":"10.1155/2021/8338616","ee":"https://doi.org/10.1155/2021/8338616","url":"https://dblp.org/rec/journals/scn/ChaisawatV21"},
+"url":"URL#129376"
+},
+{
+"@score":"4",
+"@id":"129838",
+"info":{"authors":{"author":[{"@pid":"71/387","text":"Huijie Yang"},{"@pid":"95/5846-1","text":"Jian Shen 0001"},{"@pid":"285/3765","text":"Junqing Lu"},{"@pid":"188/7830","text":"Tianqi Zhou"},{"@pid":"285/3893","text":"Xueya Xia"},{"@pid":"92/6923","text":"Sai Ji"}]},"title":"A Privacy-Preserving Data Transmission Scheme Based on Oblivious Transfer and Blockchain Technology in the Smart Healthcare.","venue":"Secur. Commun. Networks","volume":"2021","pages":"5781354:1-5781354:12","year":"2021","type":"Journal Articles","access":"open","key":"journals/scn/YangSLZXJ21","doi":"10.1155/2021/5781354","ee":"https://doi.org/10.1155/2021/5781354","url":"https://dblp.org/rec/journals/scn/YangSLZXJ21"},
+"url":"URL#129838"
+},
+{
+"@score":"4",
+"@id":"134040",
+"info":{"authors":{"author":[{"@pid":"201/3945","text":"Faiza Loukil"},{"@pid":"85/2269","text":"Chirine Ghedira Guegan"},{"@pid":"86/4432","text":"Khouloud Boukadi"},{"@pid":"62/6366","text":"Aïcha-Nabila Benharkat"}]},"title":"Privacy-Preserving IoT Data Aggregation Based on Blockchain and Homomorphic Encryption.","venue":"Sensors","volume":"21","number":"7","pages":"2452","year":"2021","type":"Journal Articles","access":"open","key":"journals/sensors/LoukilGBB21","doi":"10.3390/S21072452","ee":"https://doi.org/10.3390/s21072452","url":"https://dblp.org/rec/journals/sensors/LoukilGBB21"},
+"url":"URL#134040"
+},
+{
+"@score":"4",
+"@id":"135924",
+"info":{"authors":{"author":[{"@pid":"254/4482","text":"Kranthi Kumar Singamaneni"},{"@pid":"294/8113","text":"Kadiyala Ramana"},{"@pid":"91/5732","text":"Gaurav Dhiman"},{"@pid":"75/5436-6","text":"Saurabh Singh 0006"},{"@pid":"28/598","text":"Byungun Yoon"}]},"title":"A Novel Blockchain and Bi-Linear Polynomial-Based QCP-ABE Framework for Privacy and Security over the Complex Cloud Data.","venue":"Sensors","volume":"21","number":"21","pages":"7300","year":"2021","type":"Journal Articles","access":"open","key":"journals/sensors/SingamaneniRDSY21","doi":"10.3390/S21217300","ee":"https://doi.org/10.3390/s21217300","url":"https://dblp.org/rec/journals/sensors/SingamaneniRDSY21"},
+"url":"URL#135924"
+},
+{
+"@score":"4",
+"@id":"141012",
+"info":{"authors":{"author":[{"@pid":"292/8773","text":"Ranjith J"},{"@pid":"292/9330","text":"Mahantesh K"}]},"title":"Blockchain-based Knapsack System for Security and Privacy Preserving to Medical Data.","venue":"SN Comput. Sci.","volume":"2","number":"4","pages":"245","year":"2021","type":"Journal Articles","access":"closed","key":"journals/sncs/JK21","doi":"10.1007/S42979-021-00568-X","ee":"https://doi.org/10.1007/s42979-021-00568-x","url":"https://dblp.org/rec/journals/sncs/JK21"},
+"url":"URL#141012"
+},
+{
+"@score":"4",
+"@id":"160609",
+"info":{"authors":{"author":[{"@pid":"00/4883-7","text":"Jun Feng 0007"},{"@pid":"y/LaurenceTianruoYang","text":"Laurence Tianruo Yang"},{"@pid":"212/5731","text":"Ronghao Zhang"},{"@pid":"265/7995","text":"Benard S. Gavuna"}]},"title":"Privacy-Preserving Tucker Train Decomposition Over Blockchain-Based Encrypted Industrial IoT Data.","venue":"IEEE Trans. Ind. Informatics","volume":"17","number":"7","pages":"4904-4913","year":"2021","type":"Journal Articles","access":"closed","key":"journals/tii/FengYZG21","doi":"10.1109/TII.2020.2968923","ee":"https://doi.org/10.1109/TII.2020.2968923","url":"https://dblp.org/rec/journals/tii/FengYZG21"},
+"url":"URL#160609"
+},
+{
+"@score":"4",
+"@id":"165293",
+"info":{"authors":{"author":[{"@pid":"158/4836","text":"Qinglei Kong"},{"@pid":"13/10863","text":"Le Su"},{"@pid":"74/1079","text":"Maode Ma"}]},"title":"Achieving Privacy-Preserving and Verifiable Data Sharing in Vehicular Fog With Blockchain.","venue":"IEEE Trans. Intell. Transp. Syst.","volume":"22","number":"8","pages":"4889-4898","year":"2021","type":"Journal Articles","access":"closed","key":"journals/tits/KongSM21","doi":"10.1109/TITS.2020.2983466","ee":"https://doi.org/10.1109/TITS.2020.2983466","url":"https://dblp.org/rec/journals/tits/KongSM21"},
+"url":"URL#165293"
+},
+{
+"@score":"4",
+"@id":"168748",
+"info":{"authors":{"author":[{"@pid":"51/2807","text":"Weifeng Lu"},{"@pid":"235/2198","text":"Zhihao Ren"},{"@pid":"95/3616-3","text":"Jia Xu 0003"},{"@pid":"52/7560","text":"Siguang Chen"}]},"title":"Edge Blockchain Assisted Lightweight Privacy-Preserving Data Aggregation for Smart Grid.","venue":"IEEE Trans. Netw. Serv. Manag.","volume":"18","number":"2","pages":"1246-1259","year":"2021","type":"Journal Articles","access":"closed","key":"journals/tnsm/LuRXC21","doi":"10.1109/TNSM.2020.3048822","ee":"https://doi.org/10.1109/TNSM.2020.3048822","url":"https://dblp.org/rec/journals/tnsm/LuRXC21"},
+"url":"URL#168748"
+},
+{
+"@score":"4",
+"@id":"169486",
+"info":{"authors":{"author":[{"@pid":"201/3945","text":"Faiza Loukil"},{"@pid":"85/2269","text":"Chirine Ghedira Guegan"},{"@pid":"86/4432","text":"Khouloud Boukadi"},{"@pid":"62/6366","text":"Aïcha-Nabila Benharkat"},{"@pid":"29/5366","text":"Elhadj Benkhelifa"}]},"title":"Data Privacy Based on IoT Device Behavior Control Using Blockchain.","venue":"ACM Trans. Internet Techn.","volume":"21","number":"1","pages":"23:1-23:20","year":"2021","type":"Journal Articles","access":"closed","key":"journals/toit/LoukilGBBB21","doi":"10.1145/3434776","ee":"https://doi.org/10.1145/3434776","url":"https://dblp.org/rec/journals/toit/LoukilGBBB21"},
+"url":"URL#169486"
+},
+{
+"@score":"4",
+"@id":"176774",
+"info":{"authors":{"author":[{"@pid":"66/2378","text":"Yingwen Chen"},{"@pid":"208/7969","text":"Linghang Meng"},{"@pid":"78/6138-6","text":"Huan Zhou 0006"},{"@pid":"79/1810","text":"Guangtao Xue"}]},"title":"A Blockchain-Based Medical Data Sharing Mechanism with Attribute-Based Access Control and Privacy Protection.","venue":"Wirel. Commun. Mob. Comput.","volume":"2021","pages":"6685762:1-6685762:12","year":"2021","type":"Journal Articles","access":"open","key":"journals/wicomm/ChenMZX21","doi":"10.1155/2021/6685762","ee":"https://doi.org/10.1155/2021/6685762","url":"https://dblp.org/rec/journals/wicomm/ChenMZX21"},
+"url":"URL#176774"
+},
+{
+"@score":"4",
+"@id":"176867",
+"info":{"authors":{"author":[{"@pid":"301/6097","text":"Xiaoshuang He"},{"@pid":"278/2738","text":"Hechuan Guo"},{"@pid":"301/6070","text":"Xueyu Cheng"}]},"title":"Blockchain-Based Privacy Protection Scheme for IoT-Assisted Educational Big Data Management.","venue":"Wirel. Commun. Mob. Comput.","volume":"2021","pages":"3558972:1-3558972:11","year":"2021","type":"Journal Articles","access":"open","key":"journals/wicomm/HeGC21","doi":"10.1155/2021/3558972","ee":"https://doi.org/10.1155/2021/3558972","url":"https://dblp.org/rec/journals/wicomm/HeGC21"},
+"url":"URL#176867"
+},
+{
+"@score":"4",
+"@id":"189673",
+"info":{"authors":{"author":[{"@pid":"164/6300","text":"Dong-jun Na"},{"@pid":"09/4298","text":"Sejin Park"}]},"title":"Lightweight blockchain to solve forgery and privacy issues of vehicle image data.","venue":"APNOMS","pages":"37-40","year":"2021","type":"Conference and Workshop Papers","access":"closed","key":"conf/apnoms/NaP21","doi":"10.23919/APNOMS52696.2021.9562586","ee":"https://doi.org/10.23919/APNOMS52696.2021.9562586","url":"https://dblp.org/rec/conf/apnoms/NaP21"},
+"url":"URL#189673"
+},
+{
+"@score":"4",
+"@id":"191524",
+"info":{"authors":{"author":[{"@pid":"300/5635","text":"Huikui Zhou"},{"@pid":"300/5594","text":"Mudan Gu"}]},"title":"Protection Method of Network Data Privacy Security Issues Based on Blockchain Technology.","venue":"ATCI","pages":"526-533","year":"2021","type":"Conference and Workshop Papers","access":"closed","key":"conf/atci/ZhouG21","doi":"10.1007/978-3-030-79200-8_79","ee":"https://doi.org/10.1007/978-3-030-79200-8_79","url":"https://dblp.org/rec/conf/atci/ZhouG21"},
+"url":"URL#191524"
+},
+{
+"@score":"4",
+"@id":"193206",
+"info":{"authors":{"author":[{"@pid":"244/1647","text":"Dominik Schmelz"},{"@pid":"244/1398","text":"Karl Pinter"},{"@pid":"244/1612","text":"Phillip Niemeier"},{"@pid":"25/4726","text":"Thomas Grechenig"}]},"title":"Towards Informational Self-determination - Data Portability Requests Based on GDPR by Providing Public Platforms for Authorised Minimal Invasive Privacy Protection.","venue":"BLOCKCHAIN","pages":"106-116","year":"2021","type":"Conference and Workshop Papers","access":"closed","key":"conf/blockchain/SchmelzPNG21","doi":"10.1007/978-3-030-86162-9_11","ee":"https://doi.org/10.1007/978-3-030-86162-9_11","url":"https://dblp.org/rec/conf/blockchain/SchmelzPNG21"},
+"url":"URL#193206"
+},
+{
+"@score":"4",
+"@id":"201624",
+"info":{"authors":{"author":[{"@pid":"255/4957","text":"Ibrahim Yilmaz"},{"@pid":"283/5290","text":"Kavish Kapoor"},{"@pid":"90/3212","text":"Ambareen Siraj"},{"@pid":"283/5758","text":"Mahmoud Abouyoussef"}]},"title":"Privacy Protection of Grid Users Data with Blockchain and Adversarial Machine Learning.","venue":"SAT-CPS@CODASPY","pages":"33-38","year":"2021","type":"Conference and Workshop Papers","access":"closed","key":"conf/codaspy/YilmazKSA21","doi":"10.1145/3445969.3450431","ee":"https://doi.org/10.1145/3445969.3450431","url":"https://dblp.org/rec/conf/codaspy/YilmazKSA21"},
+"url":"URL#201624"
+},
+{
+"@score":"4",
+"@id":"204057",
+"info":{"authors":{"author":[{"@pid":"263/3490","text":"Wagner Silva"},{"@pid":"45/6671","text":"Ana Cristina Bicharra Garcia"}]},"title":"Where is our data? A Blockchain-based Information Chain of Custody Model for Privacy Improvement.","venue":"CSCWD","pages":"329-334","year":"2021","type":"Conference and Workshop Papers","access":"closed","key":"conf/cscwd/SilvaG21","doi":"10.1109/CSCWD49262.2021.9437727","ee":"https://doi.org/10.1109/CSCWD49262.2021.9437727","url":"https://dblp.org/rec/conf/cscwd/SilvaG21"},
+"url":"URL#204057"
+},
+{
+"@score":"4",
+"@id":"231084",
+"info":{"authors":{"author":[{"@pid":"296/7600","text":"Ruichen Cong"},{"@pid":"237/5108","text":"Yixiao Liu"},{"@pid":"211/9399","text":"Kiichi Tago"},{"@pid":"06/7035","text":"Ruidong Li"},{"@pid":"79/1525","text":"Hitoshi Asaeda"},{"@pid":"54/2551","text":"Qun Jin"}]},"title":"Individual-Initiated Auditable Access Control for Privacy-Preserved IoT Data Sharing with Blockchain.","venue":"ICC Workshops","pages":"1-6","year":"2021","type":"Conference and Workshop Papers","access":"closed","key":"conf/icc/CongLTLAJ21","doi":"10.1109/ICCWORKSHOPS50388.2021.9473508","ee":"https://doi.org/10.1109/ICCWorkshops50388.2021.9473508","url":"https://dblp.org/rec/conf/icc/CongLTLAJ21"},
+"url":"URL#231084"
+},
+{
+"@score":"4",
+"@id":"231464",
+"info":{"authors":{"author":[{"@pid":"29/4366","text":"Jingwei Liu"},{"@pid":"28/9575","text":"Xinyu He"},{"@pid":"91/3456","text":"Rong Sun"},{"@pid":"22/5535","text":"Xiaojiang Du"},{"@pid":"15/1123","text":"Mohsen Guizani"}]},"title":"Privacy-Preserving Data Sharing Scheme with FL via MPC in Financial Permissioned Blockchain.","venue":"ICC","pages":"1-6","year":"2021","type":"Conference and Workshop Papers","access":"closed","key":"conf/icc/LiuHSDG21","doi":"10.1109/ICC42927.2021.9500868","ee":"https://doi.org/10.1109/ICC42927.2021.9500868","url":"https://dblp.org/rec/conf/icc/LiuHSDG21"},
+"url":"URL#231464"
+},
+{
+"@score":"4",
+"@id":"268947",
+"info":{"authors":{"author":[{"@pid":"271/2633","text":"Huiru Zhang"},{"@pid":"70/797","text":"Guangshun Li"},{"@pid":"47/722","text":"Yue Zhang"},{"@pid":"164/3309","text":"Keke Gai"},{"@pid":"q/MeikangQiu","text":"Meikang Qiu"}]},"title":"Blockchain-Based Privacy-Preserving Medical Data Sharing Scheme Using Federated Learning.","venue":"KSEM","pages":"634-646","year":"2021","type":"Conference and Workshop Papers","access":"closed","key":"conf/ksem/ZhangLZGQ21","doi":"10.1007/978-3-030-82153-1_52","ee":"https://doi.org/10.1007/978-3-030-82153-1_52","url":"https://dblp.org/rec/conf/ksem/ZhangLZGQ21"},
+"url":"URL#268947"
+},
+{
+"@score":"4",
+"@id":"270024",
+"info":{"authors":{"author":[{"@pid":"160/4031","text":"Zhiyuan Huang"},{"@pid":"93/3489","text":"Jun Zheng"},{"@pid":"94/3601","text":"Mingjun Xiao"}]},"title":"Privacy-Enhanced Crowdsourcing Data Trading based on Blockchain and Stackelberg Game.","venue":"MASS","pages":"621-626","year":"2021","type":"Conference and Workshop Papers","access":"closed","key":"conf/mass/HuangZX21","doi":"10.1109/MASS52906.2021.00089","ee":"https://doi.org/10.1109/MASS52906.2021.00089","url":"https://dblp.org/rec/conf/mass/HuangZX21"},
+"url":"URL#270024"
+},
+{
+"@score":"4",
+"@id":"306295",
+"info":{"authors":{"author":[{"@pid":"255/4957","text":"Ibrahim Yilmaz"},{"@pid":"283/5290","text":"Kavish Kapoor"},{"@pid":"90/3212","text":"Ambareen Siraj"},{"@pid":"283/5758","text":"Mahmoud Abouyoussef"}]},"title":"Privacy Protection of Grid Users Data with Blockchain and Adversarial Machine Learning.","venue":"CoRR","volume":"abs/2101.06308","year":"2021","type":"Informal Publications","access":"open","key":"journals/corr/abs-2101-06308","ee":"https://arxiv.org/abs/2101.06308","url":"https://dblp.org/rec/journals/corr/abs-2101-06308"},
+"url":"URL#306295"
+},
+{
+"@score":"4",
+"@id":"313223",
+"info":{"authors":{"author":[{"@pid":"90/1208-1","text":"Muhammad Islam 0001"},{"@pid":"48/8318","text":"Mubashir Husain Rehmani"},{"@pid":"06/2379","text":"Jinjun Chen"}]},"title":"Differential Privacy-based Permissioned Blockchain for Private Data Sharing in Industrial IoT.","venue":"CoRR","volume":"abs/2102.09857","year":"2021","type":"Informal Publications","access":"open","key":"journals/corr/abs-2102-09857","ee":"https://arxiv.org/abs/2102.09857","url":"https://dblp.org/rec/journals/corr/abs-2102-09857"},
+"url":"URL#313223"
+},
+{
+"@score":"4",
+"@id":"329551",
+"info":{"authors":{"author":[{"@pid":"292/3225","text":"Jack Tanner"},{"@pid":"292/2504","text":"Roshaan Khan"}]},"title":"Technology Review of Blockchain Data Privacy Solutions.","venue":"CoRR","volume":"abs/2105.01316","year":"2021","type":"Informal Publications","access":"open","key":"journals/corr/abs-2105-01316","ee":"https://arxiv.org/abs/2105.01316","url":"https://dblp.org/rec/journals/corr/abs-2105-01316"},
+"url":"URL#329551"
+},
+{
+"@score":"4",
+"@id":"370219",
+"info":{"authors":{"author":[{"@pid":"271/0293","text":"Yepeng Ding"},{"@pid":"68/5837","text":"Hiroyuki Sato"}]},"title":"Sunspot - A Decentralized Framework Enabling Privacy for Authorizable Data Sharing on Transparent Public Blockchains.","venue":"CoRR","volume":"abs/2111.03865","year":"2021","type":"Informal Publications","access":"open","key":"journals/corr/abs-2111-03865","ee":"https://arxiv.org/abs/2111.03865","url":"https://dblp.org/rec/journals/corr/abs-2111-03865"},
+"url":"URL#370219"
+},
+{
+"@score":"4",
+"@id":"378397",
+"info":{"authors":{"author":[{"@pid":"305/9012","text":"Yao Jiang Galteland"},{"@pid":"85/3231","text":"Shuang Wu"}]},"title":"Blockchain-based Privacy-preserving Fair Data Trading Protocol.","venue":"IACR Cryptol. ePrint Arch.","volume":"2021","pages":"1321","year":"2021","type":"Informal Publications","access":"open","key":"journals/iacr/GaltelandW21","ee":"https://eprint.iacr.org/2021/1321","url":"https://dblp.org/rec/journals/iacr/GaltelandW21"},
+"url":"URL#378397"
 }
 ]
 }

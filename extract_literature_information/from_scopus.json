@@ -1,0 +1,527 @@
+﻿[
+	{
+		"type": "Article",
+		"title": "Ancile: Privacy-preserving framework for access control and interoperability of electronic health records using blockchain technology",
+		"source": "Sustainable Cities and Society",
+		"issn": "2210-6707",
+		"doi": "10.1016/j.scs.2018.02.014",
+		"article_url": "https://api.elsevier.com/content/article/eid/1-s2.0-S2210670717310685",
+		"citation_url": "https://api.elsevier.com/content/abstract/scopus_id/85042865210",
+		"cites_url": "https://www.scopus.com/inward/citedby.uri?partnerID=HzOxMe3b&scp=85042865210&origin=inward",
+		"rank": 1,
+		"year": 2018,
+		"volume": 39,
+		"issue": 0,
+		"startpage": 283,
+		"endpage": 297,
+		"cites": 267,
+		"ecc": 267,
+		"use": 1,
+		"authors": [
+			{
+				"name": "G.G. Dagher",
+				"affiliation": "Boise State University, Boise, United States"
+			}
+		]
+	},
+	{
+		"type": "Article",
+		"title": "Privacy-friendly platform for healthcare data in cloud based on blockchain environment",
+		"source": "Future Generation Computer Systems",
+		"issn": "0167-739X",
+		"doi": "10.1016/j.future.2018.12.044",
+		"article_url": "https://api.elsevier.com/content/article/eid/1-s2.0-S0167739X18314201",
+		"citation_url": "https://api.elsevier.com/content/abstract/scopus_id/85060541748",
+		"cites_url": "https://www.scopus.com/inward/citedby.uri?partnerID=HzOxMe3b&scp=85060541748&origin=inward",
+		"rank": 2,
+		"year": 2019,
+		"volume": 95,
+		"issue": 0,
+		"startpage": 511,
+		"endpage": 521,
+		"cites": 118,
+		"ecc": 118,
+		"use": 1,
+		"authors": [
+			{
+				"name": "A.A. Omar",
+				"affiliation": "University of Asia Pacific, Dhaka, Bangladesh"
+			}
+		]
+	},
+	{
+		"type": "Conference Paper",
+		"title": "MediBchain: A blockchain based privacy preserving platform for healthcare data",
+		"source": "Lecture Notes in Computer Science (including subseries Lecture Notes in Artificial Intelligence and Lecture Notes in Bioinformatics)",
+		"issn": "0302-9743",
+		"doi": "10.1007/978-3-319-72395-2_49",
+		"citation_url": "https://api.elsevier.com/content/abstract/scopus_id/85040123574",
+		"cites_url": "https://www.scopus.com/inward/citedby.uri?partnerID=HzOxMe3b&scp=85040123574&origin=inward",
+		"rank": 3,
+		"year": 2017,
+		"volume": 10658,
+		"issue": 0,
+		"startpage": 534,
+		"endpage": 543,
+		"cites": 107,
+		"ecc": 107,
+		"use": 1,
+		"authors": [
+			{
+				"name": "A. Al Omar",
+				"affiliation": "University of Asia Pacific, Dhaka, Bangladesh"
+			}
+		]
+	},
+	{
+		"type": "Article",
+		"title": "Privacy-preserving image retrieval for medical IoT systems: A blockchain-based approach",
+		"source": "IEEE Network",
+		"issn": "0890-8044",
+		"doi": "10.1109/MNET.001.1800503",
+		"citation_url": "https://api.elsevier.com/content/abstract/scopus_id/85073332226",
+		"cites_url": "https://www.scopus.com/inward/citedby.uri?partnerID=HzOxMe3b&scp=85073332226&origin=inward",
+		"rank": 4,
+		"year": 2019,
+		"volume": 33,
+		"issue": 5,
+		"startpage": 27,
+		"endpage": 33,
+		"cites": 45,
+		"ecc": 45,
+		"use": 1,
+		"authors": [
+			{
+				"name": "M. Shen",
+				"affiliation": "Beijing Institute of Technology, Beijing, China"
+			}
+		]
+	},
+	{
+		"type": "Article",
+		"title": "Proof-of-familiarity: A privacy-preserved blockchain scheme for collaborative medical decision-making",
+		"source": "Applied Sciences (Switzerland)",
+		"issn": "2076-3417",
+		"doi": "10.3390/app9071370",
+		"citation_url": "https://api.elsevier.com/content/abstract/scopus_id/85064070258",
+		"cites_url": "https://www.scopus.com/inward/citedby.uri?partnerID=HzOxMe3b&scp=85064070258&origin=inward",
+		"rank": 5,
+		"year": 2019,
+		"volume": 9,
+		"issue": 7,
+		"startpage": 0,
+		"endpage": 0,
+		"cites": 26,
+		"ecc": 26,
+		"use": 1,
+		"authors": [
+			{
+				"name": "J. Yang",
+				"affiliation": "Inje University, Gimhae, South Korea"
+			}
+		]
+	},
+	{
+		"type": "Article",
+		"title": "Privacy-Preserving Scheme of Electronic Health Records Based on Blockchain and Homomorphic Encryption",
+		"source": "Jisuanji Yanjiu yu Fazhan/Computer Research and Development",
+		"issn": "1000-1239",
+		"doi": "10.7544/issn1000-1239.2018.20180438",
+		"citation_url": "https://api.elsevier.com/content/abstract/scopus_id/85060570981",
+		"cites_url": "https://www.scopus.com/inward/citedby.uri?partnerID=HzOxMe3b&scp=85060570981&origin=inward",
+		"rank": 6,
+		"year": 2018,
+		"volume": 55,
+		"issue": 10,
+		"startpage": 2233,
+		"endpage": 2243,
+		"cites": 13,
+		"ecc": 13,
+		"use": 1,
+		"authors": [
+			{
+				"name": "W. Xu",
+				"affiliation": "Shandong Normal University, Jinan, China"
+			}
+		]
+	},
+	{
+		"type": "Article",
+		"title": "Privacy-preserving in healthcare blockchain systems based on lightweight message sharing",
+		"source": "Sensors (Switzerland)",
+		"issn": "1424-8220",
+		"doi": "10.3390/s20071898",
+		"citation_url": "https://api.elsevier.com/content/abstract/scopus_id/85082732600",
+		"cites_url": "https://www.scopus.com/inward/citedby.uri?partnerID=HzOxMe3b&scp=85082732600&origin=inward",
+		"rank": 7,
+		"year": 2020,
+		"volume": 20,
+		"issue": 7,
+		"startpage": 0,
+		"endpage": 0,
+		"cites": 11,
+		"ecc": 11,
+		"use": 1,
+		"authors": [
+			{
+				"name": "J. Fu",
+				"affiliation": "Beijing University of Posts and Telecommunications, Beijing, China"
+			}
+		]
+	},
+	{
+		"type": "Article",
+		"title": "Towards design and implementation of security and privacy framework for Internet of Medical Things (IoMT) by leveraging blockchain and IPFS technology",
+		"source": "Journal of Supercomputing",
+		"issn": "0920-8542",
+		"doi": "10.1007/s11227-020-03570-x",
+		"citation_url": "https://api.elsevier.com/content/abstract/scopus_id/85099401378",
+		"cites_url": "https://www.scopus.com/inward/citedby.uri?partnerID=HzOxMe3b&scp=85099401378&origin=inward",
+		"rank": 8,
+		"year": 2021,
+		"volume": 77,
+		"issue": 8,
+		"startpage": 7916,
+		"endpage": 7955,
+		"cites": 7,
+		"ecc": 7,
+		"use": 1,
+		"authors": [
+			{
+				"name": "R. Kumar",
+				"affiliation": "National Institute of Technology Raipur, Raipur, India"
+			}
+		]
+	},
+	{
+		"type": "Article",
+		"title": "Healthchain: A novel framework on privacy preservation of electronic health records using blockchain technology",
+		"source": "PLoS ONE",
+		"issn": "1932-6203",
+		"doi": "10.1371/journal.pone.0243043",
+		"citation_url": "https://api.elsevier.com/content/abstract/scopus_id/85097828718",
+		"cites_url": "https://www.scopus.com/inward/citedby.uri?partnerID=HzOxMe3b&scp=85097828718&origin=inward",
+		"rank": 9,
+		"year": 2020,
+		"volume": 15,
+		"issue": 12,
+		"startpage": 0,
+		"endpage": 0,
+		"cites": 7,
+		"ecc": 7,
+		"use": 1,
+		"authors": [
+			{
+				"name": "S. Chenthara",
+				"affiliation": "Victoria University Melbourne, Institute of Sustainable Industries and Liveable Cities, Melbourne, Australia"
+			}
+		]
+	},
+	{
+		"type": "Conference Paper",
+		"title": "Privacy Module for Distributed Electronic Health Records(EHRs) Using the Blockchain",
+		"source": "2019 4th IEEE International Conference on Big Data Analytics, ICBDA 2019",
+		"doi": "10.1109/ICBDA.2019.8713188",
+		"citation_url": "https://api.elsevier.com/content/abstract/scopus_id/85066610481",
+		"cites_url": "https://www.scopus.com/inward/citedby.uri?partnerID=HzOxMe3b&scp=85066610481&origin=inward",
+		"rank": 10,
+		"year": 2019,
+		"volume": 0,
+		"issue": 0,
+		"startpage": 369,
+		"endpage": 374,
+		"cites": 7,
+		"ecc": 7,
+		"use": 1,
+		"authors": [
+			{
+				"name": "R.N. Nortey",
+				"affiliation": "Donghua University, Shanghai, China"
+			}
+		]
+	},
+	{
+		"type": "Conference Paper",
+		"title": "Preserving Patients’ Privacy in Medical IoT Using Blockchain",
+		"source": "Lecture Notes in Computer Science (including subseries Lecture Notes in Artificial Intelligence and Lecture Notes in Bioinformatics)",
+		"issn": "0302-9743",
+		"doi": "10.1007/978-3-030-59824-2_9",
+		"citation_url": "https://api.elsevier.com/content/abstract/scopus_id/85092105809",
+		"cites_url": "https://www.scopus.com/inward/citedby.uri?partnerID=HzOxMe3b&scp=85092105809&origin=inward",
+		"rank": 11,
+		"year": 2020,
+		"volume": 12407,
+		"issue": 0,
+		"startpage": 103,
+		"endpage": 110,
+		"cites": 6,
+		"ecc": 6,
+		"use": 1,
+		"authors": [
+			{
+				"name": "B. Alamri",
+				"affiliation": "University of Limerick, Limerick, Ireland"
+			}
+		]
+	},
+	{
+		"type": "Conference Paper",
+		"title": "Secure and privacy focused electronic health record management system using permissioned blockchain",
+		"source": "2019 IEEE Conference on Information and Communication Technology, CICT 2019",
+		"doi": "10.1109/CICT48419.2019.9066204",
+		"citation_url": "https://api.elsevier.com/content/abstract/scopus_id/85084291478",
+		"cites_url": "https://www.scopus.com/inward/citedby.uri?partnerID=HzOxMe3b&scp=85084291478&origin=inward",
+		"rank": 12,
+		"year": 2019,
+		"volume": 0,
+		"issue": 0,
+		"startpage": 0,
+		"endpage": 0,
+		"cites": 5,
+		"ecc": 5,
+		"use": 1,
+		"authors": [
+			{
+				"name": "V. Mahore",
+				"affiliation": "Indian Institute of Information Technology, Allahabad, Allahabad, India"
+			}
+		]
+	},
+	{
+		"type": "Article",
+		"title": "Security, privacy, and reliability in digital healthcare systems using blockchain",
+		"source": "Electronics (Switzerland)",
+		"issn": "2079-9292",
+		"doi": "10.3390/electronics10162034",
+		"citation_url": "https://api.elsevier.com/content/abstract/scopus_id/85113790828",
+		"cites_url": "https://www.scopus.com/inward/citedby.uri?partnerID=HzOxMe3b&scp=85113790828&origin=inward",
+		"rank": 13,
+		"year": 2021,
+		"volume": 10,
+		"issue": 16,
+		"startpage": 0,
+		"endpage": 0,
+		"cites": 2,
+		"ecc": 2,
+		"use": 1,
+		"authors": [
+			{
+				"name": "A. Ali",
+				"affiliation": "Monash University Malaysia, Bandar Sunway, Malaysia"
+			}
+		]
+	},
+	{
+		"type": "Article",
+		"title": "A Blockchain-Based Medical Data Sharing Mechanism with Attribute-Based Access Control and Privacy Protection",
+		"source": "Wireless Communications and Mobile Computing",
+		"issn": "1530-8669",
+		"doi": "10.1155/2021/6685762",
+		"citation_url": "https://api.elsevier.com/content/abstract/scopus_id/85109980936",
+		"cites_url": "https://www.scopus.com/inward/citedby.uri?partnerID=HzOxMe3b&scp=85109980936&origin=inward",
+		"rank": 14,
+		"year": 2021,
+		"volume": 2021,
+		"issue": 0,
+		"startpage": 0,
+		"endpage": 0,
+		"cites": 2,
+		"ecc": 2,
+		"use": 1,
+		"authors": [
+			{
+				"name": "Y. Chen",
+				"affiliation": "National University of Defense Technology, Changsha, China"
+			}
+		]
+	},
+	{
+		"type": "Conference Paper",
+		"title": "Privacy and Ledger Size Analysis for Healthcare Blockchain",
+		"source": "International Conference on Information Networking",
+		"issn": "1976-7684",
+		"doi": "10.1109/ICOIN48656.2020.9016624",
+		"citation_url": "https://api.elsevier.com/content/abstract/scopus_id/85082116442",
+		"cites_url": "https://www.scopus.com/inward/citedby.uri?partnerID=HzOxMe3b&scp=85082116442&origin=inward",
+		"rank": 15,
+		"year": 2020,
+		"volume": 2020,
+		"issue": 0,
+		"startpage": 825,
+		"endpage": 829,
+		"cites": 2,
+		"ecc": 2,
+		"use": 1,
+		"authors": [
+			{
+				"name": "H. Im",
+				"affiliation": "Ajou University, Kyonggi-do, South Korea"
+			}
+		]
+	},
+	{
+		"type": "Article",
+		"title": "Privacy-preserving collaborative training for medical image analysis based on multi-blockchain",
+		"source": "Combinatorial Chemistry and High Throughput Screening",
+		"issn": "1386-2073",
+		"doi": "10.2174/1386207323666201022110616",
+		"citation_url": "https://api.elsevier.com/content/abstract/scopus_id/85110527254",
+		"cites_url": "https://www.scopus.com/inward/citedby.uri?partnerID=HzOxMe3b&scp=85110527254&origin=inward",
+		"rank": 16,
+		"year": 2021,
+		"volume": 24,
+		"issue": 7,
+		"startpage": 933,
+		"endpage": 946,
+		"cites": 1,
+		"ecc": 1,
+		"use": 1,
+		"authors": [
+			{
+				"name": "W. Zhang",
+				"affiliation": "Lenovo Group, China, Beijing, China"
+			}
+		]
+	},
+	{
+		"type": "Conference Paper",
+		"title": "Preserving Patient's Privacy using Proxy Re-encryption in Permissioned Blockchain",
+		"source": "2019 6th International Conference on Internet of Things: Systems, Management and Security, IOTSMS 2019",
+		"doi": "10.1109/IOTSMS48152.2019.8939226",
+		"citation_url": "https://api.elsevier.com/content/abstract/scopus_id/85077962115",
+		"cites_url": "https://www.scopus.com/inward/citedby.uri?partnerID=HzOxMe3b&scp=85077962115&origin=inward",
+		"rank": 17,
+		"year": 2019,
+		"volume": 0,
+		"issue": 0,
+		"startpage": 450,
+		"endpage": 457,
+		"cites": 1,
+		"ecc": 1,
+		"use": 1,
+		"authors": [
+			{
+				"name": "D.K. Meena",
+				"affiliation": "Indian Institute of Technology Kanpur, Kanpur, India"
+			}
+		]
+	},
+	{
+		"type": "Conference Paper",
+		"title": "A Differential-Privacy-Based Blockchain Architecture to Secure and Store Electronic Health Records",
+		"source": "ACM International Conference Proceeding Series",
+		"doi": "10.1145/3460537.3460555",
+		"citation_url": "https://api.elsevier.com/content/abstract/scopus_id/85120954307",
+		"cites_url": "https://www.scopus.com/inward/citedby.uri?partnerID=HzOxMe3b&scp=85120954307&origin=inward",
+		"rank": 18,
+		"year": 2021,
+		"volume": 0,
+		"issue": 0,
+		"startpage": 189,
+		"endpage": 194,
+		"cites": 0,
+		"ecc": 0,
+		"use": 1,
+		"authors": [
+			{
+				"name": "A.W. Huang",
+				"affiliation": "Western Connecticut State University, Danbury, United States"
+			}
+		]
+	},
+	{
+		"type": "Article",
+		"title": "Permissioned Healthcare Blockchain System for Securing the EHRs with Privacy Preservation",
+		"source": "Ingenierie des Systemes d'Information",
+		"issn": "1633-1311",
+		"doi": "10.18280/ISI.260407",
+		"citation_url": "https://api.elsevier.com/content/abstract/scopus_id/85116749078",
+		"cites_url": "https://www.scopus.com/inward/citedby.uri?partnerID=HzOxMe3b&scp=85116749078&origin=inward",
+		"rank": 19,
+		"year": 2021,
+		"volume": 26,
+		"issue": 4,
+		"startpage": 393,
+		"endpage": 402,
+		"cites": 0,
+		"ecc": 0,
+		"use": 1,
+		"authors": [
+			{
+				"name": "K.R. Rao",
+				"affiliation": "Jawaharlal Nehru Technological University, Kakinada, Kakinada, India"
+			}
+		]
+	},
+	{
+		"type": "Article",
+		"title": "Iot solution for ai-enabled privacy-preserving with big data transferring: An application for healthcare using blockchain",
+		"source": "Energies",
+		"issn": "1996-1073",
+		"doi": "10.3390/en14175364",
+		"citation_url": "https://api.elsevier.com/content/abstract/scopus_id/85114047303",
+		"cites_url": "https://www.scopus.com/inward/citedby.uri?partnerID=HzOxMe3b&scp=85114047303&origin=inward",
+		"rank": 20,
+		"year": 2021,
+		"volume": 14,
+		"issue": 17,
+		"startpage": 0,
+		"endpage": 0,
+		"cites": 0,
+		"ecc": 0,
+		"use": 1,
+		"authors": [
+			{
+				"name": "M. Elhoseny",
+				"affiliation": "American University in the Emirates, Dubai, United Arab Emirates"
+			}
+		]
+	},
+	{
+		"type": "Conference Paper",
+		"title": "A Survey on Data privacy and preservation using Blockchain in Healthcare organization",
+		"source": "2021 International Conference on Advance Computing and Innovative Technologies in Engineering, ICACITE 2021",
+		"doi": "10.1109/ICACITE51222.2021.9404650",
+		"citation_url": "https://api.elsevier.com/content/abstract/scopus_id/85105015342",
+		"cites_url": "https://www.scopus.com/inward/citedby.uri?partnerID=HzOxMe3b&scp=85105015342&origin=inward",
+		"rank": 21,
+		"year": 2021,
+		"volume": 0,
+		"issue": 0,
+		"startpage": 956,
+		"endpage": 962,
+		"cites": 0,
+		"ecc": 0,
+		"use": 1,
+		"authors": [
+			{
+				"name": "S. Balasubramanium",
+				"affiliation": "Noorul Islam Center for Higher Education"
+			}
+		]
+	},
+	{
+		"type": "Conference Paper",
+		"title": "Privacy Protection for Medical Image Management Based on Blockchain",
+		"source": "Lecture Notes in Computer Science (including subseries Lecture Notes in Artificial Intelligence and Lecture Notes in Bioinformatics)",
+		"issn": "0302-9743",
+		"doi": "10.1007/978-3-030-73216-5_28",
+		"citation_url": "https://api.elsevier.com/content/abstract/scopus_id/85104777371",
+		"cites_url": "https://www.scopus.com/inward/citedby.uri?partnerID=HzOxMe3b&scp=85104777371&origin=inward",
+		"rank": 22,
+		"year": 2021,
+		"volume": 12680,
+		"issue": 0,
+		"startpage": 414,
+		"endpage": 428,
+		"cites": 0,
+		"ecc": 0,
+		"use": 1,
+		"authors": [
+			{
+				"name": "Y. Li",
+				"affiliation": "Zhengzhou University, Zhengzhou, China"
+			}
+		]
+	}
+]

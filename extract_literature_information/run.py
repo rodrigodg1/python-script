@@ -1,7 +1,7 @@
 import json
 import os
 import codecs
-
+from datetime import date
 
 def open_json_dblp_file():
     # Opening JSON file
@@ -22,7 +22,22 @@ def open_json_google_file():
     return data
  
 
+def open_json_scopus_file():
+    # returns JSON object as
+    # a dictionary
+    data = json.load(codecs.open('from_scopus.json', 'r', 'utf-8-sig'))
 
+    return data
+ 
+def get_line_count(filename):
+    file = open(filename, "r")
+    line_count = 0
+    for line in file:
+        if line != "\n":
+            line_count += 1
+    file.close()
+
+    return line_count
 
 
 # Iterating through the json
@@ -50,6 +65,9 @@ def extract_info_dblp():
     
     return list_string_title_year
 
+
+
+
 def extract_info_google():
     data = open_json_google_file()
 
@@ -72,26 +90,89 @@ def extract_info_google():
     return list_string_title_year
 
 
+def extract_info_scopus():
+    data = open_json_scopus_file()
+
+    list_string_title_year = []
+
+    #extract data from dict
+    for i in data:
+        title = i['title']
+        year = i['year']
+
+        if "article_url" in i: 
+            url_ = i['article_url']
+        else:
+            url_ = "null"
+
+
+        title_year_url = f"{title}; {year}; {url_}"
+        list_string_title_year.append(title_year_url)
+    
+    return list_string_title_year
+
+
+
+
 
 def reset_results():
     os.system('rm -rf results_from_dblp.txt')
     os.system('rm -rf results_from_google.txt')
+    os.system('rm -rf results_from_scopus.txt')
+    os.system('rm -rf results_from_all_engines.txt')
+
+
+def get_date():
+    today = date.today()
+    today_formated_br = f"{today.day}/{today.month}/{today.year}"
+    return today_formated_br
+
+def write_result_in_file(filename,source,extract_info):
+    #results_from_dblp.txt
+
+
+    date = get_date()
+
+
+    textfile = open(f"{filename}", "a")
+    textfile.write(search_term)
+    textfile.write("\n")
+
+    list_string_title_year = extract_info
+    for paper in list_string_title_year:
+        textfile.write(paper + "; " + source + "; " + date + "\n")
+    textfile.close()
+
+
+search_term = ""
+
 
 while True:
 
-    op = input("1 - Extract info from DBLP\n2 - Extract info from GOOGLE \n3 - Reset results\n> ")
+    op = input(
+    '''
+    1 - Extract info from DBLP
+    2 - Extract info from GOOGLE
+    3 - Extract info from SCOPUS
+    4 - Reset results
+    0 - Insert Search Term
+    > ''')
+
+
+    if op== '0':
+        search_term = input("Enter the searh term: ")
+
     if op == '1': 
         try: 
             #write in a file
-            textfile = open("results_from_dblp.txt", "a")
-            textfile.write("\n")
+            extract_info = extract_info_dblp()
+            write_result_in_file(filename="results_from_dblp.txt",source="DBLP",extract_info=extract_info)
+            write_result_in_file(filename="results_from_all_engines.txt",source="DBLP",extract_info=extract_info)
 
-            list_string_title_year = extract_info_dblp()
-            for paper in list_string_title_year:
-                textfile.write(paper + "\n")
-            textfile.close()
+            print("\nSuccess in DBLP Analysis!!!")
+            #results = get_line_count("results_from_dblp.txt")
+            #print(f"Results in file: {results}")
 
-            print("\nSuccess!!!")
         except Exception as e:
             print(e)
             print("Fail to extract !")
@@ -100,22 +181,37 @@ while True:
     if op == '2':
         try: 
             #write in a file
-            textfile = open("results_from_google.txt", "a")
-            textfile.write("\n")
+            extract_info = extract_info_google()
+            write_result_in_file(filename="results_from_google.txt",source="SCHOLAR",extract_info=extract_info)
 
-            list_string_title_year = extract_info_google()
-            for paper in list_string_title_year:
-                textfile.write(paper + "\n")
-            textfile.close()
+            write_result_in_file(filename="results_from_all_engines.txt",source="SCHOLAR",extract_info=extract_info)
 
-            print("\nSuccess!!!")
+            print("\nSuccess in Google Scholar Analysis!!!")
+            #results = get_line_count("results_from_google.txt")
+            #print(f"Results in file: {results}")
         except Exception as e:
             print(e)
             print("Fail to extract !")
             print("Check the database file ! Must be in current directory with from_google.json filename.")
 
-
     if op == '3':
+        try: 
+            #write in a file
+            extract_info = extract_info_scopus()
+            write_result_in_file(filename="results_from_scopus.txt",source="SCOPUS",extract_info=extract_info)
+            write_result_in_file(filename="results_from_all_engines.txt",source="SCOPUS",extract_info=extract_info)
+
+            print("\nSuccess in Scopus Analysis!!!")
+            #results = get_line_count("results_from_scopus.txt")
+            #print(f"Results in file: {results}")
+            
+        except Exception as e:
+            print(e)
+            print("Fail to extract !")
+            print("Check the database file ! Must be in current directory with from_scopus.json filename.")
+
+
+    if op == '4':
         op2 = input("Are you sure? y/n\n> ")
         if op2 == 'y':
             try:
