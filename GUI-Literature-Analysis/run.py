@@ -47,13 +47,13 @@ def msg_inicial():
 
 
     lbl_google = tk.Label(fr_buttons,bg=color_google, textvariable=lbl_google_file_atual)
-    lbl_google.grid(row=6, column=0, sticky="ew", padx=5,pady=5)
+    lbl_google.grid(row=7, column=0, sticky="ew", padx=5,pady=5)
 
     lbl_scopus = tk.Label(fr_buttons,bg=color_scopus, textvariable=lbl_scopus_file_atual)
-    lbl_scopus.grid(row=7, column=0, sticky="ew", padx=5,pady=5)
+    lbl_scopus.grid(row=8, column=0, sticky="ew", padx=5,pady=5)
 
     lbl_dblp = tk.Label(fr_buttons,bg=color_dblp, textvariable=lbl_dblp_file_atual)
-    lbl_dblp.grid(row=8, column=0, sticky="ew", padx=5,pady=5)
+    lbl_dblp.grid(row=9, column=0, sticky="ew", padx=5,pady=5)
 
    
 
@@ -78,6 +78,24 @@ def confirm():
         msg_inicial()
 
 
+
+def open_file_to_screen():
+    """Open a file for editing."""
+    filepath = askopenfilename(
+        filetypes=[("Text File", "*.txt"), ("All Files", "*.*")]
+    )
+    if not filepath:
+        return False
+    txt_edit.delete(1.0, tk.END)
+
+    
+    with open(filepath, "rb") as input_file:
+        text = input_file.read()
+
+    txt_edit.insert(tk.END, text)
+    
+
+    return filepath
 
 
 def open_file():
@@ -106,7 +124,7 @@ def write_result_in_screen(filename,source,extract_info):
     date = get_date()
 
 
-    textfile = open(f"{filename}", "a")
+    textfile = open(f"{filename}", "w")
    #textfile.write(search_term)
     #textfile.write("\n")
 
@@ -147,17 +165,113 @@ def save_file():
         filetypes=[("Text Files", "*.txt"), ("All Files", "*.*")],
     )
     if not filepath:
-        return
-    with open(filepath, "w") as output_file:
-        text = txt_edit.get(1.0, tk.END)
-        output_file.write(text)
-    window.title(f"Text Editor Application - {filepath}")
+        return False
+    try:  
+        with open(filepath, "w") as output_file:
+            text = txt_edit.get(1.0, tk.END)
+            output_file.write(text)
+        window.title(f"Text Editor Application - {filepath}")
+        messagebox.showinfo("Sucesso", "Arquivo salvo com sucesso !")
+    except Exception as e:
+        messagebox.showerror("Erro", e)
+
 
 
 def clear_screen():
      txt_edit.delete(1.0, tk.END)   
      reset_results()
 
+
+
+
+
+
+def extract_google_step_1():
+    try:
+        
+        file_path_results_from_google = open_file()
+        if(file_path_results_from_google):
+            data = json.load(codecs.open(file_path_results_from_google, 'r', 'utf-8-sig'))
+
+
+            list_string = []
+
+            #extract data from dict
+            for i in data:
+                title = i['title']
+                year = i['year']
+                cites = i['cites']
+
+                if "article_url" in i: 
+                    url_ = i['article_url']
+                else:
+                    url_ = "null"
+
+
+                title_year_url_cites = f"{title}; {year}; {url_}; {cites}"
+                list_string.append(title_year_url_cites)
+
+
+            text = write_result_in_screen("results_from_google.txt","SCHOLAR",list_string)
+
+            #txt_edit.delete(1.0, tk.END)
+
+            txt_edit.insert(tk.END, text)
+
+            messagebox.showinfo("Sucesso", "Dados extraidos com sucesso !")
+
+
+            lbl_google_file_atual.set("Resultados SCHOLAR Carregados")
+            color_google = "light green"
+            lbl_google = tk.Label(fr_buttons,bg=color_google, textvariable=lbl_google_file_atual)
+            lbl_google.grid(row=7, column=0, sticky="ew", padx=5,pady=5)
+           
+    except Exception as e:
+        messagebox.showerror("Erro",e)
+        #messagebox.showerror("Descriptografar", "Chave Privada Não Carregada !")
+
+
+def extract_scopus_step_1():
+    try:
+        
+        file_path_results_from_scopus= open_file()
+        if(file_path_results_from_scopus):
+            data = json.load(codecs.open(file_path_results_from_scopus, 'r', 'utf-8-sig'))
+
+
+            list_string = []
+
+            #extract data from dict
+            for i in data:
+                title = i['title']
+                year = i['year']
+                cites = i['cites']
+
+                if "article_url" in i: 
+                    url_ = i['article_url']
+                else:
+                    url_ = "null"
+
+
+                title_year_url_cites = f"{title}; {year}; {url_}; {cites}"
+                list_string.append(title_year_url_cites)
+
+
+            text = write_result_in_screen("results_from_scopus.txt","SCOPUS",list_string)
+
+            #txt_edit.delete(1.0, tk.END)
+            txt_edit.insert(tk.END, text)
+
+            messagebox.showinfo("Sucesso", "Dados extraidos com sucesso !")
+
+            lbl_scopus_file_atual.set("Resultados SCOPUS Carregados")
+            color_scopus = "light green"
+            lbl_scopus = tk.Label(fr_buttons,bg=color_scopus, textvariable=lbl_scopus_file_atual)
+            lbl_scopus.grid(row=8, column=0, sticky="ew", padx=5,pady=5)
+        
+    except Exception as e:
+        messagebox.showerror("Erro",e)
+        #messagebox.showerror("Descriptografar", "Chave Privada Não Carregada !")
 
 
 def extract_dblp_step_1():
@@ -202,99 +316,10 @@ def extract_dblp_step_1():
         lbl_dblp_file_atual.set("Resultados DBLP Carregados")
         color_dblp = "light green"
         lbl_dblp = tk.Label(fr_buttons,bg=color_dblp, textvariable=lbl_dblp_file_atual)
-        lbl_dblp.grid(row=8, column=0, sticky="ew", padx=5,pady=5)
+        lbl_dblp.grid(row=9, column=0, sticky="ew", padx=5,pady=5)
 
     except Exception as e:
         messagebox.showerror("Erro", e)
-
-
-
-def extract_google_step_1():
-    try:
-        
-        file_path_results_from_google = open_file()
-        if(file_path_results_from_google):
-            data = json.load(codecs.open(file_path_results_from_google, 'r', 'utf-8-sig'))
-
-
-            list_string_title_year = []
-
-            #extract data from dict
-            for i in data:
-                title = i['title']
-                year = i['year']
-
-                if "article_url" in i: 
-                    url_ = i['article_url']
-                else:
-                    url_ = "null"
-
-
-                title_year_url = f"{title}; {year}; {url_}"
-                list_string_title_year.append(title_year_url)
-
-
-            text = write_result_in_screen("results_from_google.txt","SCHOLAR",list_string_title_year)
-
-            #txt_edit.delete(1.0, tk.END)
-
-            txt_edit.insert(tk.END, text)
-
-            messagebox.showinfo("Sucesso", "Dados extraidos com sucesso !")
-
-
-            lbl_google_file_atual.set("Resultados SCHOLAR Carregados")
-            color_google = "light green"
-            lbl_google = tk.Label(fr_buttons,bg=color_google, textvariable=lbl_google_file_atual)
-            lbl_google.grid(row=6, column=0, sticky="ew", padx=5,pady=5)
-           
-    except Exception as e:
-        messagebox.showerror("Erro",e)
-        #messagebox.showerror("Descriptografar", "Chave Privada Não Carregada !")
-
-
-def extract_scopus_step_1():
-    try:
-        
-        file_path_results_from_scopus= open_file()
-        if(file_path_results_from_scopus):
-            data = json.load(codecs.open(file_path_results_from_scopus, 'r', 'utf-8-sig'))
-
-
-            list_string_title_year = []
-
-            #extract data from dict
-            for i in data:
-                title = i['title']
-                year = i['year']
-
-                if "article_url" in i: 
-                    url_ = i['article_url']
-                else:
-                    url_ = "null"
-
-
-                title_year_url = f"{title}; {year}; {url_}"
-                list_string_title_year.append(title_year_url)
-
-
-            text = write_result_in_screen("results_from_scopus.txt","SCOPUS",list_string_title_year)
-
-            #txt_edit.delete(1.0, tk.END)
-            txt_edit.insert(tk.END, text)
-
-            messagebox.showinfo("Sucesso", "Dados extraidos com sucesso !")
-
-            lbl_scopus_file_atual.set("Resultados SCOPUS Carregados")
-            color_scopus = "light green"
-            lbl_scopus = tk.Label(fr_buttons,bg=color_scopus, textvariable=lbl_scopus_file_atual)
-            lbl_scopus.grid(row=7, column=0, sticky="ew", padx=5,pady=5)
-        
-    except Exception as e:
-        messagebox.showerror("Erro",e)
-        #messagebox.showerror("Descriptografar", "Chave Privada Não Carregada !")
-
-
 
 
 
@@ -338,7 +363,7 @@ fr_buttons = tk.Frame(window, relief=tk.RAISED, bd=2)
 msg_inicial()
 
 
-#btn_open = tk.Button(fr_buttons, text="Open", command=open_file)
+btn_open = tk.Button(fr_buttons, text="Open", height=2, width=21 ,command=open_file_to_screen)
 btn_save = tk.Button(fr_buttons, text="Save As...",height=2, width=21 ,command=save_file)
 #btn_clear = tk.Button(fr_buttons, text="Clear Results...",height=2, width=21, command=clear_screen)
 btn_clear= tk.Button(fr_buttons,text='Clear Results',height=2, width=21,command=confirm)
@@ -364,16 +389,17 @@ button_size_20= Button(fr_buttons, text="20", height=2, width=21, command= size_
 btn_google.grid(row=2, column=0, sticky="ew", padx=5)
 btn_scopus.grid(row=3, column=0, sticky="ew", padx=5)
 btn_dblp.grid(row=4, column=0, sticky="ew", padx=5)
-btn_save.grid(row=5, column=0, sticky="ew", padx=5)
-lbl_google.grid(row=6, column=0, sticky="ew", padx=5,pady=5)
-lbl_scopus.grid(row=7, column=0, sticky="ew", padx=5,pady=5)
-lbl_dblp.grid(row=8, column=0, sticky="ew", padx=5,pady=5)
+btn_open.grid(row=5, column=0, sticky="ew", padx=5)
+btn_save.grid(row=6, column=0, sticky="ew", padx=5)
+lbl_google.grid(row=7, column=0, sticky="ew", padx=5,pady=5)
+lbl_scopus.grid(row=8, column=0, sticky="ew", padx=5,pady=5)
+lbl_dblp.grid(row=9, column=0, sticky="ew", padx=5,pady=5)
 
 
 
-lbl_font_size.grid(row=12, column=0, sticky="ew", padx=5,pady=15)
-button_size_12.grid(row=13, column=0, sticky="ew", padx=5)
-button_size_20.grid(row=14, column=0, sticky="ew", padx=5)
+lbl_font_size.grid(row=30, column=0, sticky="ew", padx=5,pady=15)
+button_size_12.grid(row=31, column=0, sticky="ew", padx=5)
+button_size_20.grid(row=32, column=0, sticky="ew", padx=5)
 
 
 
@@ -382,11 +408,6 @@ button_size_20.grid(row=14, column=0, sticky="ew", padx=5)
 btn_clear.grid(row=15, column=0, sticky="ew", padx=5)
 
 
-
-#btn_decrypt.grid(row=3, column=0, sticky="ew", padx=5)
-#btn_load_public_key.grid(row=4, column=0, sticky="ew", padx=5, pady=0)
-#btn_load_private_key.grid(row=5, column=0, sticky="ew", padx=5,pady=0)
-#btn_create_key_pair.grid(row=6, column=0, sticky="ew", padx=5,pady=0)
 
 
 
