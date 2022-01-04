@@ -162,7 +162,15 @@ def clear_screen():
 
 def extract_dblp_step_1():
     try:
-        data = open_file()
+        data_path = open_file()
+        f = open(data_path)
+    
+        # returns JSON object as
+        # a dictionary
+        data = json.load(f)
+        # Closing file
+        f.close()
+
 
         result = data['result']
         hits = result['hits']
