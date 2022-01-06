@@ -39,21 +39,25 @@ def msg_inicial():
     lbl_scopus_file_atual.set("Resultados SCOPUS não carregados")
     lbl_google_file_atual.set("Resultados SCHOLAR não carregados")
     lbl_dblp_file_atual.set("Resultados DBLP não carregados")
-
+    lbl_crossref_file_atual.set("Resultados CROSSREF não carregados")
 
     color_google = "tomato"
     color_scopus = "tomato"
     color_dblp = "tomato"
+    color_crossref = "tomato"
 
 
     lbl_google = tk.Label(fr_buttons,bg=color_google, textvariable=lbl_google_file_atual)
-    lbl_google.grid(row=7, column=0, sticky="ew", padx=5,pady=5)
+    lbl_google.grid(row=8, column=0, sticky="ew", padx=5,pady=5)
 
     lbl_scopus = tk.Label(fr_buttons,bg=color_scopus, textvariable=lbl_scopus_file_atual)
-    lbl_scopus.grid(row=8, column=0, sticky="ew", padx=5,pady=5)
+    lbl_scopus.grid(row=9, column=0, sticky="ew", padx=5,pady=5)
 
     lbl_dblp = tk.Label(fr_buttons,bg=color_dblp, textvariable=lbl_dblp_file_atual)
-    lbl_dblp.grid(row=9, column=0, sticky="ew", padx=5,pady=5)
+    lbl_dblp.grid(row=10, column=0, sticky="ew", padx=5,pady=5)
+
+    lbl_crossref = tk.Label(fr_buttons,bg=color_crossref, textvariable=lbl_crossref_file_atual)
+    lbl_crossref.grid(row=11, column=0, sticky="ew", padx=5,pady=5)
 
    
 
@@ -64,14 +68,16 @@ def reset_results():
         os.system('rm -rf results_from_dblp.txt')
         os.system('rm -rf results_from_google.txt')
         os.system('rm -rf results_from_scopus.txt')
+        os.system('rm -rf results_from_crossref.txt')
         os.system('rm -rf results_from_all_engines.txt')
         messagebox.showinfo("Sucesso", "Resultados removidos com sucesso !")
+
     except Exception as e:
         messagebox.showerror("Erro", e)
 
 # click event handler
 def confirm():
-    answer = askyesno(title='Confirmation',
+    answer = askyesno(title='Confirmação',
                     message='Você tem certeza que deseja apagar todos os resultados?')
     if answer:
         clear_screen()
@@ -224,7 +230,7 @@ def extract_google_step_1():
             lbl_google_file_atual.set("Resultados SCHOLAR Carregados")
             color_google = "light green"
             lbl_google = tk.Label(fr_buttons,bg=color_google, textvariable=lbl_google_file_atual)
-            lbl_google.grid(row=7, column=0, sticky="ew", padx=5,pady=5)
+            lbl_google.grid(row=8, column=0, sticky="ew", padx=5,pady=5)
            
     except Exception as e:
         messagebox.showerror("Erro",e)
@@ -267,7 +273,7 @@ def extract_scopus_step_1():
             lbl_scopus_file_atual.set("Resultados SCOPUS Carregados")
             color_scopus = "light green"
             lbl_scopus = tk.Label(fr_buttons,bg=color_scopus, textvariable=lbl_scopus_file_atual)
-            lbl_scopus.grid(row=8, column=0, sticky="ew", padx=5,pady=5)
+            lbl_scopus.grid(row=9, column=0, sticky="ew", padx=5,pady=5)
         
     except Exception as e:
         messagebox.showerror("Erro",e)
@@ -316,10 +322,52 @@ def extract_dblp_step_1():
         lbl_dblp_file_atual.set("Resultados DBLP Carregados")
         color_dblp = "light green"
         lbl_dblp = tk.Label(fr_buttons,bg=color_dblp, textvariable=lbl_dblp_file_atual)
-        lbl_dblp.grid(row=9, column=0, sticky="ew", padx=5,pady=5)
+        lbl_dblp.grid(row=10, column=0, sticky="ew", padx=5,pady=5)
 
     except Exception as e:
         messagebox.showerror("Erro", e)
+
+def extract_crossref_step_1():
+    try:
+        
+        file_path_results_from_crossref= open_file()
+        if(file_path_results_from_crossref):
+            data = json.load(codecs.open(file_path_results_from_crossref, 'r', 'utf-8-sig'))
+
+
+            list_string = []
+
+            #extract data from dict
+            for i in data:
+                title = i['title']
+                year = i['year']
+                cites = i['cites']
+
+                if "article_url" in i: 
+                    url_ = i['article_url']
+                else:
+                    url_ = "null"
+
+
+                title_year_url_cites = f"{title}; {year}; {url_}; {cites}"
+                list_string.append(title_year_url_cites)
+
+
+            text = write_result_in_screen("results_from_crossref.txt","CROSSREF",list_string)
+
+            #txt_edit.delete(1.0, tk.END)
+            txt_edit.insert(tk.END, text)
+
+            messagebox.showinfo("Sucesso", "Dados extraidos com sucesso !")
+
+            lbl_scopus_file_atual.set("Resultados CROSSREF Carregados")
+            color_scopus = "light green"
+            lbl_crossref = tk.Label(fr_buttons,bg=color_scopus, textvariable=lbl_crossref_file_atual)
+            lbl_crossref.grid(row=11, column=0, sticky="ew", padx=5,pady=5)
+        
+    except Exception as e:
+        messagebox.showerror("Erro",e)
+        #messagebox.showerror("Descriptografar", "Chave Privada Não Carregada !")
 
 
 
@@ -342,7 +390,7 @@ window.columnconfigure(1, minsize=800, weight=1)
 lbl_scopus_file_atual = StringVar()
 lbl_google_file_atual = StringVar()
 lbl_dblp_file_atual = StringVar()
-
+lbl_crossref_file_atual = StringVar()
 
 global color_google
 global color_scopus
@@ -351,11 +399,14 @@ global color_dblp
 color_google = "tomato"
 color_scopus = "tomato"
 color_dblp = "tomato"
+color_crossref = "tomato"
 
 
 
 #txt_edit = tk.Text(window)
 txt_edit = scrolledtext.ScrolledText(window)
+txt_edit.config(font=('Helvetica',10))
+
 
 fr_buttons = tk.Frame(window, relief=tk.RAISED, bd=2)
 
@@ -365,35 +416,35 @@ msg_inicial()
 
 btn_open = tk.Button(fr_buttons, text="Open", height=2, width=21 ,command=open_file_to_screen)
 btn_save = tk.Button(fr_buttons, text="Save As...",height=2, width=21 ,command=save_file)
-#btn_clear = tk.Button(fr_buttons, text="Clear Results...",height=2, width=21, command=clear_screen)
 btn_clear= tk.Button(fr_buttons,text='Clear Results',height=2, width=21,command=confirm)
 
 btn_google = tk.Button(fr_buttons, text="Load SCHOLAR Results...",height=2, width=21, command=extract_google_step_1)
 btn_scopus = tk.Button(fr_buttons, text="Load SCOPUS Results...",height=2, width=21, command=extract_scopus_step_1)
 btn_dblp = tk.Button(fr_buttons, text="Load DBLP Results...",height=2, width=21, command=extract_dblp_step_1)
+btn_crossref = tk.Button(fr_buttons, text="Load CROSSREF Results...",height=2, width=21, command=extract_crossref_step_1)
 
 
-
-#btn_create_key_pair = tk.Button(fr_buttons, text="Criar par de chaves ...", height=2, width=21, command=create_key_pair)
 
 lbl_font_size = tk.Label(fr_buttons, text="Font Size:")
 lbl_google= tk.Label(fr_buttons,bg=color_google, textvariable=lbl_google_file_atual)
 lbl_scopus = tk.Label(fr_buttons,bg=color_scopus, textvariable=lbl_scopus_file_atual)
 lbl_dblp = tk.Label(fr_buttons,bg=color_scopus, textvariable=lbl_dblp_file_atual)
+lbl_crossref = tk.Label(fr_buttons,bg=color_crossref, textvariable=lbl_crossref_file_atual)
 
 
 button_size_12= Button(fr_buttons, text="12", height=2, width=21, command= size_12)
 button_size_20= Button(fr_buttons, text="20", height=2, width=21, command= size_20)
-#btn_open.grid(row=0, column=0, sticky="ew", padx=5, pady=5)
 
 btn_google.grid(row=2, column=0, sticky="ew", padx=5)
 btn_scopus.grid(row=3, column=0, sticky="ew", padx=5)
 btn_dblp.grid(row=4, column=0, sticky="ew", padx=5)
-btn_open.grid(row=5, column=0, sticky="ew", padx=5)
-btn_save.grid(row=6, column=0, sticky="ew", padx=5)
-lbl_google.grid(row=7, column=0, sticky="ew", padx=5,pady=5)
-lbl_scopus.grid(row=8, column=0, sticky="ew", padx=5,pady=5)
-lbl_dblp.grid(row=9, column=0, sticky="ew", padx=5,pady=5)
+btn_crossref.grid(row=5, column=0, sticky="ew", padx=5)
+btn_open.grid(row=6, column=0, sticky="ew", padx=5)
+btn_save.grid(row=7, column=0, sticky="ew", padx=5)
+lbl_google.grid(row=8, column=0, sticky="ew", padx=5,pady=5)
+lbl_scopus.grid(row=9, column=0, sticky="ew", padx=5,pady=5)
+lbl_dblp.grid(row=10, column=0, sticky="ew", padx=5,pady=5)
+lbl_crossref.grid(row=11, column=0, sticky="ew", padx=5,pady=5)
 
 
 
