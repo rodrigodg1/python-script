@@ -432,8 +432,8 @@ lbl_dblp = tk.Label(fr_buttons,bg=color_scopus, textvariable=lbl_dblp_file_atual
 lbl_crossref = tk.Label(fr_buttons,bg=color_crossref, textvariable=lbl_crossref_file_atual)
 
 
-button_size_12= Button(fr_buttons, text="12", height=2, width=21, command= size_12)
-button_size_20= Button(fr_buttons, text="20", height=2, width=21, command= size_20)
+button_size_12= Button(fr_buttons, text="12", height=2, width=2, command= size_12)
+button_size_20= Button(fr_buttons, text="20", height=2, width=2, command= size_20)
 
 btn_google.grid(row=2, column=0, sticky="ew", padx=5)
 btn_scopus.grid(row=3, column=0, sticky="ew", padx=5)
@@ -451,9 +451,6 @@ lbl_crossref.grid(row=11, column=0, sticky="ew", padx=5,pady=5)
 lbl_font_size.grid(row=30, column=0, sticky="ew", padx=5,pady=15)
 button_size_12.grid(row=31, column=0, sticky="ew", padx=5)
 button_size_20.grid(row=32, column=0, sticky="ew", padx=5)
-
-
-
 
 
 btn_clear.grid(row=15, column=0, sticky="ew", padx=5)
