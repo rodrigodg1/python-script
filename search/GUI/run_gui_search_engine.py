@@ -27,21 +27,26 @@ import time
 
 import os
 
+#change this
+path_gui_directory = "C:/Users/rodri/Desktop/python-script/search/GUI"
 
-path_gui_directory = "/Users/rodrigo/Desktop/python-script/search/GUI"
 
-#path_to_save = '/Users/rodrigodutra/Desktop/python-script/search/GUI/history_strings_papers.txt'
+
+
+
+
+
 
 #create gui elements
 window = Tk()
 window.resizable(True, True)
 window.title("Search Engine v1.0")
-window.geometry('1024x620')
+window.geometry('960x600')
 lbl_String = Label(window, text="String",font='Helvetica 10 bold')
 lbl_String.grid(column=0, row=0)
 lbl_String.place(x=10,y=20)
 
-txt_String = Entry(window,width=115,font='Helvetica 14')
+txt_String = Entry(window,width=80,font='Helvetica 14')
 txt_String.grid(column=1, row=0)
 txt_String.place(x=60,y=10,height=40)
 
@@ -71,15 +76,15 @@ chk_state_zlibgen.set(False) #set check state
 
 
 chk = Checkbutton(window, text='DBLP', var=chk_state_dblp)
-chk.place(x=30,y=67)
+chk.place(x=30,y=75)
 chk = Checkbutton(window, text='PUBMED', var=chk_state_pubmed)
-chk.place(x=100,y=67)
+chk.place(x=100,y=75)
 chk = Checkbutton(window, text='SCOPUS', var=chk_state_scopus)
-chk.place(x=190,y=67)
+chk.place(x=190,y=75)
 chk = Checkbutton(window, text='SCHOLAR', var=chk_state_scholar)
-chk.place(x=280,y=67)
+chk.place(x=280,y=75)
 chk = Checkbutton(window, text='ZLIBGEN', var=chk_state_zlibgen)
-chk.place(x=380,y=67)
+chk.place(x=380,y=75)
 
 
 
@@ -100,7 +105,7 @@ def track_change_to_text_to_blue(event):
 
 
 
-txt_edit=scrolledtext.ScrolledText(window,width=118, height=20, wrap=tk.WORD,font='Consolas 12')  
+txt_edit=scrolledtext.ScrolledText(window,width=103, height=20, wrap=tk.WORD,font='Consolas 12')  
 txt_edit.bind('<F1>', track_change_to_text_to_dark)
 txt_edit.bind('<F2>', track_change_to_text_to_light)
 txt_edit.bind('<F3>', track_change_to_text_to_blue)
@@ -123,7 +128,11 @@ lbl_String_file_size.place(x=18,y=105)
 
 
 #autosaving
-path_file_save_this = f"{path_gui_directory}/blank_file.txt"
+
+path_to_save_default = f"{path_gui_directory}/temp.txt"
+
+global path_file_save_this
+path_file_save_this = path_to_save_default
 
 
 def clear_file(name):
@@ -148,6 +157,12 @@ def get_file_size(path):
 def show_log():
     txt_edit.delete("1.0","end")
     arquivo = open(path_file_save_this,'r')
+    txt_edit.insert(INSERT, arquivo.read())  
+
+
+def open_temp_file():
+    txt_edit.delete("1.0","end")
+    arquivo = open("temp.txt",'r')
     txt_edit.insert(INSERT, arquivo.read())  
     
 
@@ -182,8 +197,8 @@ def save_changes():
             return True
             
         
-    except:
-        alert_msg("Fail to save")
+    except Exception as e:
+        alert_msg(e)
 
 
     
@@ -241,8 +256,7 @@ def google_clicked():
         arquivo = open(path_file_save_this,'a')
         arquivo.write(str(txt_String.get()) + " , " + "GOOGLE" + ', ' + date_ + ", "+ hour_ +'\n')
         arquivo.close()
-        
-        
+            
         show_log()
         
 #if engine button
@@ -254,21 +268,21 @@ def engine_clicked():
     else:
         engines_names = []
         if(chk_state_dblp.get()):
-            engines_names.append("DBLP")
+            engines_names.append(" DBLP")
             webbrowser.open("https://dblp.org/search?q=" + str(txt_String.get()))
         if(chk_state_pubmed.get()):
-            engines_names.append("PUBMED")
+            engines_names.append(" PUBMED")
             webbrowser.open("https://pubmed.ncbi.nlm.nih.gov/?term=" + str(txt_String.get()))
         if(chk_state_scopus.get()):
-            engines_names.append("SCOPUS")
+            engines_names.append(" SCOPUS")
             #webbrowser.open("https://www.scopus.com/results/results.uri?src=s&sot=b&sdt=b&origin=searchbasic&rr=&sl=40&s=TITLE-ABS-KEY("+str(txt_String.get())+")&searchterm1=blockchain%20and%20healthcare&searchTerms=&connectors=&field1=TITLE_ABS_KEY&fields=")
             #webbrowser.open("https://www.scopus.com/results/results.uri?src=s&sot=b&sdt=b&origin=searchbasic&rr=&sl=15&s=TITLE-ABS-KEY("+str(txt_String.get())+")&searchterm1="+str(txt_String.get())+"&searchTerms=&connectors=&field1=ALL&fields=")
             webbrowser.open("https://www.scopus.com/results/results.uri?sid=7a0754416e07eadad037a624472287b7&src=s&sot=b&sdt=b&origin=searchbasic&rr=&sl=25&s=TITLE-ABS-KEY("+str(txt_String.get())+")&searchterm1="+str(txt_String.get())+"&searchTerms=&connectors=&field1=TITLE_ABS_KEY&fields=")      
         if(chk_state_scholar.get()):
-            engines_names.append("SCHOLAR")
+            engines_names.append(" SCHOLAR")
             webbrowser.open("https://scholar.google.com/scholar?hl=pt-BR&as_sdt=0%2C5&q="+str(txt_String.get())+"&btnG=") 
         if(chk_state_zlibgen.get()):
-            engines_names.append("ZLIBGEN")
+            engines_names.append(" ZLIBGEN")
             webbrowser.open("https://br1lib.org/s/"+str(txt_String.get()))   
     
         date_,hour_ = get_date_and_hour()
@@ -284,7 +298,7 @@ def engine_clicked():
         
       
 def alert_msg(msg):
-    tkinter.messagebox.showinfo(title=None, message=msg)
+    tkinter.messagebox.showinfo(title="Alert", message=msg)
            
    
     
@@ -296,10 +310,13 @@ def open_file():
     #for save this feature
     global path_file_save_this 
     path_file_save_this = filepath
+
+
     
 
     if not filepath:
-        return
+        return 
+
     txt_edit.delete(1.0, tk.END)
     with open(filepath, "r") as input_file:
         text = input_file.read()
@@ -307,7 +324,29 @@ def open_file():
     window.title(f"Text Editor Engine - {filepath}")
     
     
-    return filepath
+    return True
+
+
+def try_open_file():
+    if(open_file()):
+        pass 
+    else:
+        pass
+        #global path_file_save_this
+        #path_file_save_this = path_to_save_default
+        #alert_msg("Fail to open. Opening default file ... ")
+       # open_temp_file()
+        
+
+
+
+def try_save_file():
+    if(save_file()):
+        alert_msg("Success !")
+    else:
+        global path_file_save_this
+        path_file_save_this = path_to_save_default
+
 
 def save_file():
     """Save the current file as a new file."""
@@ -322,18 +361,27 @@ def save_file():
     
     
     if not filepath:
-        return
+        return False
+
+
     with open(filepath, "w") as output_file:
         text = txt_edit.get(1.0, tk.END)
         output_file.write(text)
     window.title(f"Text Editor Engine - {filepath}")
-    alert_msg("Success !")
+    
+    return True
     
     
     
 def new_file():
     txt_edit.delete("1.0","end") 
-    save_file()
+    if(save_file()):
+        alert_msg("Success !")
+    else:
+      pass
+        
+
+    
             
    
 count_char =0
@@ -375,13 +423,13 @@ myFont = font.Font(size=8)
 
 align_engine_google_drive_btn = 65
 btn_engine = Button(window,text="Engine", command=engine_clicked)
-btn_engine.config( height = 2, width = 9 )
+btn_engine.config( height = 2, width = 12 )
 btn_engine.place(x=490,y=align_engine_google_drive_btn)
 btn_engine.config(fg='black')
 btn_engine['font'] = myFont
 
 btn_google = Button(window, text="Google", command=google_clicked)
-btn_google.config( height = 2, width = 9 )
+btn_google.config( height = 2, width = 12 )
 btn_google.place(x=590,y=align_engine_google_drive_btn)
 btn_google.config(fg='blue')
 btn_google['font'] = myFont
@@ -407,27 +455,28 @@ btn_drive['font'] = myFont
 new_save_open_btn_y= 530
 
 btn_new = Button(window, text="New", command=new_file)
-btn_new.config( height = 1, width = 9 )
+btn_new.config( height = 2, width = 12, padx= 20)
 btn_new.place(x=15,y=new_save_open_btn_y)
 btn_new.config(fg='Black')
 btn_new['font'] = myFont
 
-btn_open = Button(window, text="Open", command=open_file)
-btn_open.config( height = 1, width = 9 )
-btn_open.place(x=90,y=new_save_open_btn_y)
+btn_open = Button(window, text="Open", command=try_open_file)
+btn_open.config( height = 2, width = 12,padx=20 )
+btn_open.place(x=150,y=new_save_open_btn_y)
 btn_open.config(fg='Black')
 btn_open['font'] = myFont
 
-btn_save_as = Button(window, text="Save as...", command=save_file)
-btn_save_as.config( height = 1, width = 9 )
-btn_save_as.place(x=165,y=new_save_open_btn_y)
+btn_save_as = Button(window, text="Save as...", command=try_save_file)
+btn_save_as.config( height = 2, width = 12,padx=20 )
+btn_save_as.place(x=290,y=new_save_open_btn_y)
 btn_save_as.config(fg='Black')
 btn_save_as['font'] = myFont
 
 
 
 #show_log()
-clear_file("blank_file")
+#clear_file("blank_file")
+open_temp_file()
 
 autosave() 
 window.mainloop()
