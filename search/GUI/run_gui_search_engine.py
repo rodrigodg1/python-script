@@ -28,11 +28,7 @@ import time
 import os
 
 #change this
-path_gui_directory = "C:/Users/rodri/Desktop/python-script/search/GUI"
-
-
-
-
+path_gui_directory = "./"
 
 
 
@@ -42,11 +38,11 @@ window = Tk()
 window.resizable(True, True)
 window.title("Search Engine v1.0")
 window.geometry('960x600')
-lbl_String = Label(window, text="String",font='Helvetica 10 bold')
+lbl_String = Label(window, text="String",font='Consolas 10 bold')
 lbl_String.grid(column=0, row=0)
 lbl_String.place(x=10,y=20)
 
-txt_String = Entry(window,width=80,font='Helvetica 14')
+txt_String = Entry(window,width=80,font='Consolas 14')
 txt_String.grid(column=1, row=0)
 txt_String.place(x=60,y=10,height=40)
 

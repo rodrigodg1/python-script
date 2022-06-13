@@ -9,11 +9,11 @@ import requests,sys,webbrowser,bs4
 import pandas as pd
 import numpy as np
 import urllib
-from fake_useragent import UserAgent
+#from fake_useragent import UserAgent
 import requests
 import re
 from urllib.request import Request, urlopen
-from bs4 import BeautifulSoup
+#from bs4 import BeautifulSoup
 
 from tkinter import *
 import tkinter.messagebox
