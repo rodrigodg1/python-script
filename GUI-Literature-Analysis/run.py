@@ -176,7 +176,7 @@ def save_file():
         with open(filepath, "w") as output_file:
             text = txt_edit.get(1.0, tk.END)
             output_file.write(text)
-        window.title(f"Text Editor Application - {filepath}")
+        window.title(f"Works - Editor {filepath}")
         messagebox.showinfo("Sucesso", "Arquivo salvo com sucesso !")
     except Exception as e:
         messagebox.showerror("Erro", e)
@@ -418,10 +418,10 @@ btn_open = tk.Button(fr_buttons, text="Open", height=2, width=21 ,command=open_f
 btn_save = tk.Button(fr_buttons, text="Save As...",height=2, width=21 ,command=save_file)
 btn_clear= tk.Button(fr_buttons,text='Clear Results',height=2, width=21,command=confirm)
 
-btn_google = tk.Button(fr_buttons, text="Load SCHOLAR Results...",height=2, width=21, command=extract_google_step_1)
-btn_scopus = tk.Button(fr_buttons, text="Load SCOPUS Results...",height=2, width=21, command=extract_scopus_step_1)
-btn_dblp = tk.Button(fr_buttons, text="Load DBLP Results...",height=2, width=21, command=extract_dblp_step_1)
-btn_crossref = tk.Button(fr_buttons, text="Load CROSSREF Results...",height=2, width=21, command=extract_crossref_step_1)
+btn_google = tk.Button(fr_buttons, text="Load SCHOLAR Results (.json)",height=2, width=21, command=extract_google_step_1)
+btn_scopus = tk.Button(fr_buttons, text="Load SCOPUS Results (.json)",height=2, width=21, command=extract_scopus_step_1)
+btn_dblp = tk.Button(fr_buttons, text="Load DBLP Results (.json)",height=2, width=21, command=extract_dblp_step_1)
+btn_crossref = tk.Button(fr_buttons, text="Load CROSSREF Results (.json)",height=2, width=21, command=extract_crossref_step_1)
 
 
 
