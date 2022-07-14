@@ -382,7 +382,7 @@ def size_20():
 
 
 window = tk.Tk()
-window.title("Text Editor Application")
+window.title("Works - Editor")
 window.rowconfigure(0, minsize=800, weight=1)
 window.columnconfigure(1, minsize=800, weight=1)
 
